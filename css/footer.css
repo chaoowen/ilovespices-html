@@ -1,0 +1,184 @@
+.footer {
+  background: var(--footer-bg);
+  color: #fff;
+  padding: 50px 0 30px;
+  margin-top: auto;
+}
+
+.footer__container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.footer__main {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 60px;
+  padding-bottom: 40px;
+}
+
+/* ========================================
+   Footer Left - Company Information
+   ======================================== */
+.footer__company {
+  max-width: 400px;
+}
+
+/* Brand Section */
+.footer__brand {
+  width: 190px;
+  margin-bottom: 20px;
+}
+
+/* Company Details */
+.footer__company-group {
+  margin-bottom: 10px;
+}
+
+.footer__company-name {
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.footer__company-text {
+  font-size: 12px;
+  line-height: 1.8;
+}
+
+.footer__company-text a {
+  transition: var(--transition);
+}
+
+.footer__company-text a:hover {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+/* ========================================
+   Social Media Icons
+  ======================================== */
+.footer__social {
+  display: flex;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.footer__social-link {
+  width: 30px;
+  height: 30px;
+  transition: var(--transition);
+}
+
+.footer__social-link:hover {
+  transform: translateY(-3px);
+}
+
+/* ========================================
+   Footer Right - Navigation Links
+   ======================================== */
+.footer__links {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 40px;
+}
+
+.footer__column {
+  min-width: 0;
+}
+
+.footer__column-title {
+  max-width: 120px;
+  font-size: 16px;
+  font-weight: 500;
+  margin-bottom: 20px;
+  padding-bottom: 20px;
+  border-bottom: 2px solid #fff;
+}
+
+.footer__column-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  font-size: 14px;
+}
+
+.footer__column-link {
+  color: #fff;
+  transition: var(--transition);
+  display: block;
+  position: relative;
+  padding-left: 0;
+}
+
+/* Hover 動畫效果 */
+.footer__column-link::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 50%;
+  width: 0;
+  height: 1px;
+  background: #fff;
+  transition: var(--transition);
+  transform: translateY(-50%);
+}
+
+.footer__column-link:hover {
+  color: #fff;
+  padding-left: 15px;
+}
+
+.footer__column-link:hover::before {
+  width: 10px;
+}
+
+/* ========================================
+   Responsive Design - Tablet (1024px)
+   ======================================== */
+@media (max-width: 1024px) {
+  .footer__main {
+    gap: 40px;
+  }
+
+  .footer__links {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+  }
+}
+
+/* ========================================
+   Responsive Design - Mobile (768px)
+   ======================================== */
+@media (max-width: 768px) {
+  .footer__main {
+    display: flex;
+    flex-direction: column-reverse;
+    gap: 40px;
+  }
+
+  .footer__company {
+    max-width: 100%;
+  }
+
+  .footer__links {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+}
+
+/* ========================================
+   Responsive Design - Small Mobile (480px)
+   ======================================== */
+@media (max-width: 480px) {
+  .footer {
+    padding: 40px 0 20px;
+  }
+
+  .footer__container {
+    padding: 0 40px;
+  }
+
+  .footer__social {
+    justify-content: center;
+  }
+}

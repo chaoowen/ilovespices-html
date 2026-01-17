@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="McCormick 味好美官方網站">
+  <title>味好美 | 官方網站</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700&display=swap" rel="stylesheet">
+
+  <!-- Swiper CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+
+  <!-- External CSS -->
+  <link rel="stylesheet" href="../css/global.css">
+  <link rel="stylesheet" href="../css/header.css">
+  <link rel="stylesheet" href="../css/footer.css">
+  <link rel="stylesheet" href="../../css/home/home.css">
+  <link rel="stylesheet" href="../../css/home/products.css">
+  <link rel="stylesheet" href="../../css/home/recipes.css">
+</head>
+
+<body>
+  <!-- header -->
+  <div id="header"></div>
+
+  <!-- main content -->
+  <main class="main-content">
+    <!-- cover1 -->
+    <div class="home-cover-1">
+      <div class="home-cover-1__content">
+        <img src="../images/icons/global.svg" alt="global">
+        <p class="home-cover-1__title">Global Flavor Authority</p>
+        <p class="home-cover-1__text">全球香料領導品牌 美國百年調味專家</p>
+        <p class="home-cover-1__text">為您的料理帶來專業級的層次風味</p>
+      </div>
+    </div>
+
+    <!-- products -->
+    <div id="products"></div>
+
+    <!-- cover2 -->
+    <section class="home-cover-2">
+      <div class="home-cover-2__image">
+        <img src="../images/home/cover-3.png" alt="Shake up the ordinary">
+      </div>
+      <div class="home-cover-2__content">
+        <h2 class="home-cover-2__title">SHAKE UP<br>THE ORDINARY</h2>
+        <p class="home-cover-2__subtitle">喚醒你廚房裡的靈魂</p>
+        <a href="#" class="btn home-cover-2__btn">更多</a>
+      </div>
+    </section>
+
+    <!-- cover3 -->
+    <section class="home-cover-3">
+      <h2 class="home-cover-3__title">今天，你想來點什麼？</h2>
+      <!-- 桌面/平板 Grid 版本 -->
+      <div class="home-cover-3__grid">
+        <!-- 卡片由 JS 動態生成 -->
+      </div>
+      <!-- 手機 Swiper 版本 -->
+      <div class="home-cover-3__carousel">
+        <div class="swiper home-cover-3-swiper">
+          <div class="swiper-wrapper home-cover-3__swiper-content">
+            <!-- 卡片由 JS 動態生成 -->
+          </div>
+        </div>
+        <div class="home-cover-3__nav-prev"></div>
+        <div class="home-cover-3__nav-next"></div>
+      </div>
+    </section>
+
+    <!-- recipes -->
+    <div id="recipes"></div>
+
+    <!-- cover4 - 熱門商品 -->
+    <section class="home-cover-4">
+      <h2 class="home-cover-4__title">熱門商品</h2>
+      <!-- 桌面/平板 Grid 版本 -->
+      <div class="home-cover-4__grid">
+        <!-- 卡片由 JS 動態生成 -->
+      </div>
+      <!-- 手機 Swiper 版本 -->
+      <div class="home-cover-4__carousel">
+        <div class="swiper home-cover-4-swiper">
+          <div class="swiper-wrapper home-cover-4__swiper-content">
+            <!-- 卡片由 JS 動態生成 -->
+          </div>
+        </div>
+        <div class="home-cover-4__nav-prev"></div>
+        <div class="home-cover-4__nav-next"></div>
+      </div>
+    </section>
+
+    <!-- cover5 -- 餐飲服務 -->
+    <section class="home-cover-5">
+      <h2 class="home-cover-5__title">餐飲服務</h2>
+      <div class="home-cover-5__grid">
+        <div class="home-cover-5__card">
+          <div class="home-cover-5__card-image">
+            <img src="../images/home/service-1.png" alt="袋裝香辛料">
+          </div>
+          <p class="home-cover-5__card-name">袋裝香辛料</p>
+          <p class="home-cover-5__card-name-en">Italian Seasoning</p>
+        </div>
+        <div class="home-cover-5__card">
+          <div class="home-cover-5__card-image">
+            <img src="../images/home/service-2.png" alt="罐裝香辛料">
+          </div>
+          <p class="home-cover-5__card-name">罐裝香辛料</p>
+          <p class="home-cover-5__card-name-en">Italian Seasoning</p>
+        </div>
+        <div class="home-cover-5__card">
+          <div class="home-cover-5__card-image">
+            <img src="../images/home/service-3.png" alt="醬料">
+          </div>
+          <p class="home-cover-5__card-name">醬料</p>
+          <p class="home-cover-5__card-name-en">Italian Seasoning</p>
+        </div>
+      </div>
+      <a href="#" class="btn home-cover-5__btn">更多</a>
+    </section>
+
+    <!-- cover6 -- 用味好美 -->
+    <section class="home-cover-6">
+      <h2 class="home-cover-6__title">用味好美</h2>
+      <p class="home-cover-6__subtitle">為世界各地的人們提供美味、健康和可持續的食品體驗</p>
+      <div class="home-cover-6__content">
+        <div class="home-cover-6__plate">
+          <img src="../images/home/cover-5.png" alt="美食">
+        </div>
+        <div class="home-cover-6__features">
+          <div class="home-cover-6__feature home-cover-6__feature--1">
+            <div class="home-cover-6__feature-icon">
+              <img src="../images/icons/ingrediant.svg" alt="嚴選原料">
+            </div>
+            <p class="home-cover-6__feature-text">嚴選原料</p>
+          </div>
+          <div class="home-cover-6__feature home-cover-6__feature--2">
+            <div class="home-cover-6__feature-icon">
+              <img src="../images/icons/test.svg" alt="嚴格品管">
+            </div>
+            <p class="home-cover-6__feature-text">嚴格品管</p>
+          </div>
+          <div class="home-cover-6__feature home-cover-6__feature--3">
+            <div class="home-cover-6__feature-icon">
+              <img src="../images/icons/certification.svg" alt="檢驗認證">
+            </div>
+            <p class="home-cover-6__feature-text">檢驗認證</p>
+          </div>
+          <div class="home-cover-6__feature home-cover-6__feature--4">
+            <div class="home-cover-6__feature-icon">
+              <img src="../images/icons/seasioning.svg" alt="美味健康">
+            </div>
+            <p class="home-cover-6__feature-text">美味健康</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- cover7 -- 品牌特色 -->
+    <section class="home-cover-7">
+      <div class="home-cover-7__grid">
+        <div class="home-cover-7__column">
+          <h3 class="home-cover-7__title">嚴選全球產地</h3>
+          <p class="home-cover-7__text">深入全球 80 多個國家</p>
+          <p class="home-cover-7__text">只在香料風味最飽滿的季節採收</p>
+          <p class="home-cover-7__text">從馬達加斯加的香草到西貢的肉桂</p>
+          <p class="home-cover-7__text">我們一直深深相信</p>
+          <p class="home-cover-7__text">風土 (Terroir) 才是美味的靈魂</p>
+        </div>
+        <div class="home-cover-7__column">
+          <h3 class="home-cover-7__title">134 年製香工藝</h3>
+          <p class="home-cover-7__text">源自 1889 年的堅持</p>
+          <p class="home-cover-7__text">從一顆種子到瓶中粉末</p>
+          <p class="home-cover-7__text">用超過一個世紀的經驗</p>
+          <p class="home-cover-7__text">研磨出那道讓你餐桌發光的黃金比例</p>
+          <p class="home-cover-7__text">時間是我們最昂貴的配方</p>
+        </div>
+        <div class="home-cover-7__column">
+          <h3 class="home-cover-7__title">最高食安標準</h3>
+          <p class="home-cover-7__text">堅持「純粹」</p>
+          <p class="home-cover-7__text">拒絕非必要的添加</p>
+          <p class="home-cover-7__text">每一瓶出廠的香料</p>
+          <p class="home-cover-7__text">都經過比國家標準更嚴苛的檢驗</p>
+          <p class="home-cover-7__text">讓你安心為家人上菜</p>
+        </div>
+      </div>
+      <a href="#" class="btn home-cover-7__btn">更多</a>
+    </section>
+
+    <!-- cover8 -- 黃金比例 -->
+    <section class="home-cover-8">
+      <div class="home-cover-8__content">
+        <p class="home-cover-8__subtitle">家用主打星：蒙特婁口味牛排粉</p>
+        <h2 class="home-cover-8__title">不只是鹽與胡椒<br>而是黃金比例的魔法</h2>
+        <a href="#" class="btn home-cover-8__btn">更多</a>
+      </div>
+    </section>
+  </main>
+
+  <!-- footer -->
+  <div id="footer"></div>
+</body>
+
+<!-- Swiper JS -->
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<script>
+  Promise.all([
+    fetch('./layout/header.html').then(response => response.text()),
+    fetch('./layout/footer.html').then(response => response.text()),
+    fetch('./home/products.html').then(response => response.text()),
+    fetch('./home/recipes.html').then(response => response.text()),
+    fetch('../js/header.js').then(response => response.text()),
+    fetch('../js/products.js').then(response => response.text()),
+    fetch('../js/swiper.js').then(response => response.text()),
+    fetch('../js/home-cover-3.js').then(response => response.text()),
+    fetch('../js/home-cover-3-swiper.js').then(response => response.text()),
+    fetch('../js/recipes.js').then(response => response.text()),
+    fetch('../js/recipes-swiper.js').then(response => response.text()),
+    fetch('../js/home-cover-4.js').then(response => response.text()),
+    fetch('../js/home-cover-4-swiper.js').then(response => response.text())
+  ])
+    .then(([headerHtml, footerHtml, productsHtml, recipesHtml, headerJs, productsJs, swiperJs, homeCover3Js, homeCover3SwiperJs, recipesJs, recipesSwiperJs, homeCover4Js, homeCover4SwiperJs]) => {
+      // 1. 先插入 HTML
+      document.getElementById('header').innerHTML = headerHtml;
+      document.getElementById('footer').innerHTML = footerHtml;
+      document.getElementById('products').innerHTML = productsHtml;
+      document.getElementById('recipes').innerHTML = recipesHtml;
+
+      // 2. 執行 JavaScript（順序重要：先生成卡片，再初始化 Swiper）
+      const headerFunc = new Function(headerJs);
+      const productsFunc = new Function(productsJs);
+      const swiperFunc = new Function(swiperJs);
+      const homeCover3Func = new Function(homeCover3Js);
+      const homeCover3SwiperFunc = new Function(homeCover3SwiperJs);
+      const recipesFunc = new Function(recipesJs);
+      const recipesSwiperFunc = new Function(recipesSwiperJs);
+      const homeCover4Func = new Function(homeCover4Js);
+      const homeCover4SwiperFunc = new Function(homeCover4SwiperJs);
+
+      headerFunc();
+      productsFunc();        // 生成產品卡片
+      swiperFunc();          // 初始化產品 Swiper
+      homeCover3Func();      // 生成 Cover 3 卡片
+      homeCover3SwiperFunc(); // 初始化 Cover 3 Swiper
+      recipesFunc();         // 生成食譜卡片
+      recipesSwiperFunc();   // 初始化食譜 Swiper
+      homeCover4Func();      // 生成熱門商品卡片
+      homeCover4SwiperFunc(); // 初始化熱門商品 Swiper (手機版)
+
+      console.log('✅ All components loaded successfully!');
+    })
+</script>
+
+</html>

@@ -1,0 +1,83 @@
+/* ========================================
+    Global Styles & CSS Variables
+    ======================================== */
+:root {
+  --primary-color: #0052a3;
+  --secondary-color: #C20000;
+  --text-dark: #333333;
+  --text-light: #666666;
+  --border-color: #e0e0e0;
+  --footer-bg: #232222;
+  --hover-color: #003d7a;
+  --transition: all 0.3s ease;
+  --bg-cream: #faf8f3;
+}
+
+/* Reset & Base Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Noto Sans TC', -apple-system, BlinkMacSystemFont, sans-serif;
+  color: var(--text-dark);
+  line-height: 1.6;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  transition: var(--transition);
+}
+
+ul {
+  list-style: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Smooth Scroll */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Accessibility - Focus Styles */
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid var(--primary-color);
+  outline-offset: 3px;
+}
+
+/* ========================================
+  Main Content Styles
+======================================== */
+.main-content {
+  flex: 1;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.btn {
+  display: block;
+  width: 200px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  border-radius: 4px;
+  font-size: 14px;
+  font-weight: 500;
+  text-decoration: none;
+  text-align: center;
+  transition: var(--transition);
+}

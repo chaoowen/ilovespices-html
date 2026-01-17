@@ -1,0 +1,415 @@
+/* ========================================
+   Single Spice Section Styles
+   輪播區塊樣式
+   顏色變量請參考 css/global.css
+   ======================================== */
+
+/* ========================================
+   Section Container
+   ======================================== */
+.single-spice {
+  position: relative;
+  padding: 80px 0;
+  background: var(--bg-cream);
+  z-index: 10;
+}
+
+/* ========================================
+   Hero Background
+   ======================================== */
+.single-spice__hero {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  z-index: 0;
+}
+
+.single-spice__hero img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+
+/* ========================================
+   Tab Navigation
+   ======================================== */
+.single-spice__tabs {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, -100%);
+  display: inline-flex;
+  justify-content: center;
+  gap: 40px;
+  z-index: 30;
+}
+
+.single-spice__tab {
+  width: 180px;
+  padding: 12px 0;
+  background: #fff;
+  border-radius: 20px 20px 0 0;
+  font-size: 18px;
+  border: none;
+  font-weight: 700;
+  color: var(--secondary-color);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  opacity: 0.8;
+}
+
+.single-spice__tab:hover {
+  opacity: 1;
+}
+
+.single-spice__tab.active {
+  opacity: 1;
+}
+
+/* ========================================
+   Main Container
+   ======================================== */
+.single-spice__container {
+  position: relative;
+  z-index: 5;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* ========================================
+   Section Header
+   ======================================== */
+.single-spice__header {
+  text-align: center;
+  margin-bottom: 40px;
+  position: relative;
+  z-index: 5;
+}
+
+.single-spice__title {
+  font-size: 60px;
+  font-weight: 700;
+  color: var(--secondary-color);
+  margin-bottom: 10px;
+}
+
+.single-spice__subtitle {
+  font-size: 36px;
+  font-weight: 500;
+  color: var(--text-dark);
+}
+
+/* ========================================
+   Carousel Container
+   ======================================== */
+.single-spice__carousel {
+  position: relative;
+  max-width: 1200px;
+  margin: 0 auto;
+  overflow: hidden;
+  z-index: 5;
+}
+
+.single-spice-swiper {
+  padding: 40px 0;
+}
+
+/* 讓所有 slide 高度一致 */
+.single-spice-swiper .swiper-wrapper {
+  align-items: stretch;
+}
+
+.single-spice-swiper .swiper-slide {
+  height: auto;
+}
+
+.swiper-slide:nth-child(5n+1) .product-card {
+  background-image: url('../../images/bgImage/bg-1.png');
+}
+
+.swiper-slide:nth-child(5n+2) .product-card {
+  background-image: url('../../images/bgImage/bg-2.png');
+}
+
+.swiper-slide:nth-child(5n+3) .product-card {
+  background-image: url('../../images/bgImage/bg-3.png');
+}
+
+.swiper-slide:nth-child(5n+4) .product-card {
+  background-image: url('../../images/bgImage/bg-4.png');
+}
+
+.swiper-slide:nth-child(5n+5) .product-card {
+  background-image: url('../../images/bgImage/bg-5.png');
+}
+
+/* ========================================
+   Product Card
+   ======================================== */
+.product-card {
+  border-radius: 30px 30px 140px 140px;
+  padding: 40px 30px 30px;
+  text-align: center;
+  transition: var(--transition);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  backdrop-filter: blur(10px);
+}
+
+.product-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.15);
+}
+
+/* Product Image */
+.product-card__image {
+  width: 100%;
+  height: 240px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 25px;
+  position: relative;
+}
+
+.product-card__image img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.15));
+  transition: var(--transition);
+}
+
+.product-card:hover .product-card__image img {
+  transform: scale(1.05);
+}
+
+.product-card__info {
+  margin-bottom: 12px;
+}
+
+.product-card__name-zh {
+  font-size: 18px;
+  font-weight: 500;
+  color: #fff;
+  margin-bottom: 8px;
+  letter-spacing: 1px;
+}
+
+.product-card__name-en {
+  font-weight: 400;
+  color: #fff;
+  letter-spacing: 0.5px;
+}
+
+/* ========================================
+   Swiper Navigation
+   ======================================== */
+.swiper-button-prev,
+.swiper-button-next {
+  width: 48px;
+  height: 48px;
+  background: #ffffff;
+  border-radius: 50%;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  transition: var(--transition);
+  top: calc(50% - 60px);
+}
+
+.swiper-button-prev::after,
+.swiper-button-next::after {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--secondary-color);
+}
+
+.swiper-button-prev:hover,
+.swiper-button-next:hover {
+  background: var(--secondary-color);
+  transform: scale(1.1);
+}
+
+.swiper-button-prev:hover::after,
+.swiper-button-next:hover::after {
+  color: #ffffff;
+}
+
+/* 調整箭頭位置 - 內推 20px */
+.swiper-button-prev {
+  left: 20px;
+}
+
+.swiper-button-next {
+  right: 20px;
+}
+
+/* ========================================
+   Swiper Pagination
+   ======================================== */
+.swiper-pagination {
+  position: relative;
+  margin-top: 50px;
+}
+
+.swiper-pagination-bullet {
+  width: 12px;
+  height: 12px;
+  background: var(--text-light);
+  opacity: 0.4;
+  transition: var(--transition);
+}
+
+.swiper-pagination-bullet-active {
+  background: var(--secondary-color);
+  opacity: 1;
+  width: 32px;
+  border-radius: 6px;
+}
+
+/* ========================================
+   Action Button
+   ======================================== */
+.single-spice__btn {
+  background-color: #fff;
+  border: 2px solid var(--secondary-color);
+  color: var(--secondary-color);
+}
+
+.single-spice__btn:hover {
+  background: var(--secondary-color);
+  color: #fff;
+}
+
+/* ========================================
+   Responsive Design - Tablet (1024px)
+   ======================================== */
+@media (max-width: 1024px) {
+  .single-spice {
+    padding: 60px 0;
+  }
+
+  .single-spice__title {
+    font-size: 48px;
+  }
+
+  .single-spice__subtitle {
+    font-size: 24px;
+  }
+
+  .single-spice__tab {
+    width: 160px;
+    font-size: 16px;
+  }
+
+  .product-card__image {
+    height: 200px;
+  }
+}
+
+/* ========================================
+   Responsive Design - Mobile (768px)
+   ======================================== */
+@media (max-width: 768px) {
+  .single-spice {
+    padding: 40px 0;
+  }
+
+  .single-spice__tabs {
+    gap: 12px;
+  }
+
+  .single-spice__tab {
+    width: 84px;
+    padding: 8px 0;
+    font-size: 14px;
+    border-radius: 12px 12px 0 0;
+  }
+
+  .single-spice__header {
+    margin-bottom: 24px;
+  }
+
+  .single-spice__title {
+    font-size: 36px;
+  }
+
+  .single-spice__subtitle {
+    font-size: 20px;
+  }
+
+  .single-spice-swiper {
+    padding: 30px 50px;
+  }
+
+  .product-card {
+    padding: 30px 20px 20px;
+  }
+
+  .product-card__image {
+    height: 180px;
+  }
+
+  .product-card__name-zh {
+    font-size: 14px;
+  }
+
+  .product-card__name-en {
+    font-size: 12px;
+  }
+
+  .swiper-button-prev,
+  .swiper-button-next {
+    width: 40px;
+    height: 40px;
+  }
+
+  .swiper-button-prev::after,
+  .swiper-button-next::after {
+    font-size: 16px;
+  }
+}
+
+/* ========================================
+   Responsive Design - Small Mobile (480px)
+   ======================================== */
+@media (max-width: 480px) {
+  .single-spice__tabs {
+    width: 100%;
+    gap: 0;
+    flex-wrap: wrap;
+  }
+
+  .single-spice__title {
+    font-size: 32px;
+  }
+
+  .single-spice__subtitle {
+    font-size: 18px;
+  }
+
+  .single-spice-swiper {
+    padding: 20px 40px;
+  }
+
+  .product-card {
+    padding: 25px 15px 15px;
+  }
+
+  .product-card__image {
+    height: 200px;
+  }
+
+  .swiper-button-prev {
+    left: 5px;
+  }
+
+  .swiper-button-next {
+    right: 5px;
+  }
+}

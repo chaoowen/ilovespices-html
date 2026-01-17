@@ -1,0 +1,208 @@
+.header {
+  background: #ffffff;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  transition: var(--transition);
+}
+
+.header__container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* ========================================
+   Logo Section
+   ======================================== */
+.header__logo-section {
+  padding-top: 16px;
+  text-align: center;
+  position: relative;
+}
+
+.header__logo {
+  display: inline-block;
+  transition: transform 0.3s ease;
+}
+
+.header__logo:hover {
+  transform: scale(1.05);
+}
+
+.header__logo img {
+  height: 100px;
+  width: auto;
+}
+
+/* ========================================
+   Navigation Menu
+   ======================================== */
+.header__nav-list {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.header__nav-item {
+  position: relative;
+}
+
+.header__nav-link {
+  display: block;
+  padding: 12px 25px;
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--text-dark);
+  position: relative;
+  transition: var(--transition);
+}
+
+/* Hover 底線動畫效果 */
+.header__nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: 8px;
+  left: 50%;
+  width: 0;
+  height: 2px;
+  background: var(--secondary-color);
+  transition: all 0.3s ease;
+  transform: translateX(-50%);
+}
+
+.header__nav-link:hover {
+  color: var(--primary-color);
+}
+
+.header__nav-link:hover::after {
+  width: 60%;
+}
+
+/* Active 狀態 */
+.header__nav-link.active {
+  color: var(--primary-color);
+}
+
+.header__nav-link.active::after {
+  width: 60%;
+}
+
+/* Navigation Separator */
+.header__nav-separator {
+  color: var(--border-color);
+  font-weight: 300;
+  user-select: none;
+}
+
+/* ========================================
+   Mobile Menu Toggle Button
+   ======================================== */
+.header__mobile-toggle {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 28px;
+  cursor: pointer;
+  padding: 10px;
+  color: var(--text-dark);
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 1001;
+}
+
+/* ========================================
+   Responsive Design - Tablet (1024px)
+   ======================================== */
+@media (max-width: 1024px) {
+  .header__logo img {
+    height: 80px;
+  }
+
+  .header__nav-link {
+    padding: 10px 20px;
+    font-size: 15px;
+  }
+}
+
+/* ========================================
+   Responsive Design - Mobile (768px)
+   ======================================== */
+@media (max-width: 768px) {
+  .header__logo img {
+    height: 70px;
+  }
+
+  /* 顯示漢堡選單按鈕 */
+  .header__mobile-toggle {
+    display: block;
+  }
+
+  /* 導航選單摺疊效果 */
+  .header__nav {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+    border-top: none;
+  }
+
+  .header__nav.active {
+    max-height: 500px;
+    border-top: 1px solid var(--border-color);
+  }
+
+  /* 垂直排列導航項目 */
+  .header__nav-list {
+    flex-direction: column;
+    gap: 0;
+    padding: 0;
+  }
+
+  .header__nav-item {
+    width: 100%;
+    border-bottom: 1px solid var(--border-color);
+  }
+
+  .header__nav-link {
+    padding: 15px 20px;
+    width: 100%;
+    text-align: center;
+  }
+
+  /* 隱藏分隔符號 */
+  .header__nav-separator {
+    display: none;
+  }
+}
+
+/* ========================================
+   Responsive Design - Small Mobile (480px)
+   ======================================== */
+@media (max-width: 480px) {
+  .header__container {
+    padding: 0 15px;
+  }
+
+  .header__logo img {
+    height: 60px;
+  }
+}
+
+/* ========================================
+   Print Styles
+   ======================================== */
+@media print {
+  .header {
+    position: static;
+    box-shadow: none;
+  }
+
+  .header__mobile-toggle {
+    display: none;
+  }
+}

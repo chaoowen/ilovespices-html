@@ -1,0 +1,1117 @@
+/* ========================================
+   Home Cover 1
+   ======================================== */
+.home-cover-1 {
+  width: 100%;
+  height: 680px;
+  background-image: url('../../images/home/cover-1.png');
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  z-index: 1;
+}
+
+.home-cover-1__content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #fff;
+}
+
+.home-cover-1__content img {
+  width: 100px;
+  height: auto;
+  margin-bottom: 20px;
+}
+
+.home-cover-1__title {
+  font-size: 80px;
+  font-weight: 600;
+  margin-bottom: 10px;
+  letter-spacing: -2%;
+  text-align: center;
+}
+
+.home-cover-1__text {
+  font-size: 24px;
+  font-weight: 500;
+  letter-spacing: -2%;
+}
+
+
+@media (max-width: 768px) {
+  .home-cover-1 {
+    height: 400px;
+  }
+
+  .home-cover-1__content img {
+    width: 40px;
+  }
+
+  .home-cover-1__title {
+    font-size: 28px;
+  }
+
+  .home-cover-1__text {
+    font-size: 14px;
+  }
+}
+
+
+/* ========================================
+   Home Cover 2 - Shake Up The Ordinary
+   ======================================== */
+.home-cover-2 {
+  display: flex;
+  align-items: center;
+  background-color: #000000;
+  min-height: 500px;
+}
+
+.home-cover-2__image {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.home-cover-2__image img {
+  width: 100%;
+  height: 500px;
+  object-fit: cover;
+  object-position: center;
+  transform: scale(1.5);
+  transform-origin: center 20%;
+}
+
+.home-cover-2__content {
+  flex: 1;
+  padding: 60px;
+  color: #ffffff;
+}
+
+.home-cover-2__title {
+  font-size: 60px;
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: 16px;
+  letter-spacing: -2%;
+}
+
+.home-cover-2__subtitle {
+  font-size: 20px;
+  font-weight: 500;
+  margin-bottom: 20px;
+  color: #fff;
+}
+
+.home-cover-2__btn {
+  margin: 0;
+  background-color: #fff;
+  border: 1px solid #fff;
+  color: #000;
+}
+
+.home-cover-2__btn:hover {
+  background-color: transparent;
+  color: #fff;
+}
+
+/* Responsive - Tablet */
+@media (max-width: 1024px) {
+  .home-cover-2 {
+    min-height: 400px;
+  }
+
+  .home-cover-2__image img {
+    height: 400px;
+  }
+
+  .home-cover-2__content {
+    padding: 40px;
+  }
+
+  .home-cover-2__title {
+    font-size: 36px;
+  }
+
+  .home-cover-2__subtitle {
+    font-size: 16px;
+  }
+}
+
+/* Responsive - Mobile */
+@media (max-width: 768px) {
+  .home-cover-2 {
+    position: relative;
+    min-height: 400px;
+    background-image: url('../../images/home/cover-3.png');
+    background-size: cover;
+    background-position: center;
+  }
+
+  .home-cover-2__image {
+    display: none;
+  }
+
+  .home-cover-2__content {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 30px 20px;
+    text-align: left;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.7), transparent);
+  }
+
+  .home-cover-2__title {
+    font-size: 28px;
+  }
+
+  .home-cover-2__subtitle {
+    font-size: 14px;
+    margin-bottom: 16px;
+  }
+}
+
+
+/* ========================================
+   Home Cover 3 - 食物卡片區塊
+   ======================================== */
+.home-cover-3 {
+  padding: 80px 20px;
+  background-color: #F3ECE2;
+}
+
+.home-cover-3__title {
+  text-align: center;
+  font-size: 36px;
+  font-weight: 500;
+  color: #333;
+  margin-bottom: 50px;
+}
+
+/* Grid 版本（桌面/平板） */
+.home-cover-3__grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Swiper 版本（手機）- 桌面隱藏 */
+.home-cover-3__carousel {
+  display: none;
+}
+
+.home-cover-3__card {
+  position: relative;
+  border-radius: 16px;
+  overflow: hidden;
+  aspect-ratio: 1 / 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 24px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+.home-cover-3__card:hover .home-cover-3__card-bg {
+  scale: 1.05;
+}
+
+.home-cover-3__card-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+  transition: var(--transition);
+}
+
+.home-cover-3__card-text {
+  position: relative;
+  z-index: 1;
+  color: #fff;
+  font-weight: 500;
+  line-height: 1.6;
+}
+
+.home-cover-3__card-btn {
+  position: relative;
+  z-index: 1;
+  margin: 0 auto;
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #fff;
+  border-radius: 50px;
+  color: var(--text-dark);
+  font-size: 14px;
+  font-weight: 500;
+  text-decoration: none;
+  text-align: center;
+  transition: var(--transition);
+  opacity: 0.8;
+}
+
+.home-cover-3__card-btn:hover {
+  color: var(--secondary-color);
+  opacity: 1;
+}
+
+
+/* Responsive - Tablet */
+@media (max-width: 1024px) {
+  .home-cover-3 {
+    padding: 60px 0;
+  }
+
+  .home-cover-3__title {
+    font-size: 28px;
+    margin-bottom: 40px;
+    padding: 0 20px;
+  }
+
+  /* 隱藏 Grid，顯示 Swiper */
+  .home-cover-3__grid {
+    display: none;
+  }
+
+  .home-cover-3__carousel {
+    display: block;
+    position: relative;
+    padding: 0 24px;
+  }
+
+  .home-cover-3-swiper {
+    overflow: hidden;
+  }
+
+  /* Navigation arrows */
+  .home-cover-3__nav-prev,
+  .home-cover-3__nav-next {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 40px;
+    height: 40px;
+    background: #ffffff;
+    border-radius: 50%;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    cursor: pointer;
+    z-index: 10;
+  }
+
+  .home-cover-3__nav-prev {
+    left: 10px;
+  }
+
+  .home-cover-3__nav-next {
+    right: 10px;
+  }
+
+  .home-cover-3__nav-prev::after,
+  .home-cover-3__nav-next::after {
+    font-family: swiper-icons;
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--secondary-color);
+  }
+
+  .home-cover-3__nav-prev::after {
+    content: 'prev';
+  }
+
+  .home-cover-3__nav-next::after {
+    content: 'next';
+  }
+}
+
+/* Responsive - Mobile */
+@media (max-width: 768px) {
+  .home-cover-3 {
+    padding: 60px 0;
+  }
+
+  .home-cover-3__title {
+    font-size: 24px;
+    margin-bottom: 30px;
+    padding: 0 16px;
+  }
+
+  /* 隱藏 Grid，顯示 Swiper */
+  .home-cover-3__grid {
+    display: none;
+  }
+
+  .home-cover-3__carousel {
+    display: block;
+    position: relative;
+  }
+
+  .home-cover-3-swiper {
+    overflow: hidden;
+  }
+
+  .home-cover-3__card {
+    padding: 16px;
+    height: 100%;
+  }
+
+  .home-cover-3__card-text {
+    font-size: 12px;
+  }
+
+  .home-cover-3__card-btn {
+    font-size: 12px;
+    padding: 8px 16px;
+  }
+
+  /* Navigation arrows */
+  .home-cover-3__nav-prev,
+  .home-cover-3__nav-next {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 36px;
+    height: 36px;
+    background: #ffffff;
+    border-radius: 50%;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    cursor: pointer;
+    z-index: 10;
+  }
+
+  .home-cover-3__nav-prev::after,
+  .home-cover-3__nav-next::after {
+    font-family: swiper-icons;
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--secondary-color);
+  }
+
+  .home-cover-3__nav-prev::after {
+    content: 'prev';
+  }
+
+  .home-cover-3__nav-next::after {
+    content: 'next';
+  }
+}
+
+/* Responsive - Small Mobile */
+@media (max-width: 480px) {
+  .home-cover-3__carousel {
+    padding: 0 16px;
+  }
+}
+
+
+/* ========================================
+   Home Cover 4 - 熱門商品
+   ======================================== */
+.home-cover-4 {
+  padding: 80px 20px;
+  background-image: url('../../images/home/cover-4.jpg');
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+
+.home-cover-4::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 0;
+}
+
+.home-cover-4__title {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  font-size: 42px;
+  font-weight: 500;
+  color: #ffffff;
+  margin-bottom: 50px;
+}
+
+.home-cover-4__grid {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Swiper 版本（手機）- 桌面/平板隱藏 */
+.home-cover-4__carousel {
+  display: none;
+}
+
+.home-cover-4__card {
+  transition: var(--transition);
+  opacity: 0.9;
+}
+
+.home-cover-4__card:hover {
+  opacity: 1;
+}
+
+.home-cover-4__card-image {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  border-radius: 20px;
+  overflow: hidden;
+  margin-bottom: 16px;
+  border: 8px solid #fff;
+}
+
+.home-cover-4__card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.home-cover-4__card-info {
+  text-align: center;
+}
+
+.home-cover-4__card-name {
+  font-size: 16px;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 4px;
+  line-height: 1.4;
+}
+
+.home-cover-4__card-name-en {
+  font-size: 10px;
+  font-weight: 700;
+  color: #fff;
+}
+
+/* Responsive - Tablet */
+@media (max-width: 1024px) {
+  .home-cover-4 {
+    padding: 60px 0;
+  }
+
+  .home-cover-4__title {
+    font-size: 36px;
+    margin-bottom: 40px;
+    padding: 0 20px;
+  }
+
+  /* 隱藏 Grid，顯示 Swiper */
+  .home-cover-4__grid {
+    display: none;
+  }
+
+  .home-cover-4__carousel {
+    display: block;
+    position: relative;
+    z-index: 1;
+    padding: 0 50px;
+  }
+
+  .home-cover-4-swiper {
+    overflow: hidden;
+  }
+
+  /* Navigation arrows */
+  .home-cover-4__nav-prev,
+  .home-cover-4__nav-next {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 40px;
+    height: 40px;
+    background: #ffffff;
+    border-radius: 50%;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    cursor: pointer;
+    z-index: 10;
+  }
+
+  .home-cover-4__nav-prev {
+    left: 8px;
+  }
+
+  .home-cover-4__nav-next {
+    right: 8px;
+  }
+
+  .home-cover-4__nav-prev::after,
+  .home-cover-4__nav-next::after {
+    font-family: swiper-icons;
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--secondary-color);
+  }
+
+  .home-cover-4__nav-prev::after {
+    content: 'prev';
+  }
+
+  .home-cover-4__nav-next::after {
+    content: 'next';
+  }
+}
+
+/* Responsive - Mobile */
+@media (max-width: 768px) {
+  .home-cover-4 {
+    padding: 50px 0;
+  }
+
+  .home-cover-4__title {
+    font-size: 28px;
+    margin-bottom: 30px;
+    padding: 0 16px;
+  }
+
+  .home-cover-4__carousel {
+    padding: 0 40px;
+  }
+
+  .home-cover-4__card-name {
+    font-size: 12px;
+  }
+
+  .home-cover-4__card-name-en {
+    font-size: 10px;
+  }
+
+  .home-cover-4__nav-prev,
+  .home-cover-4__nav-next {
+    width: 36px;
+    height: 36px;
+  }
+
+  .home-cover-4__nav-prev {
+    left: 4px;
+  }
+
+  .home-cover-4__nav-next {
+    right: 4px;
+  }
+
+  .home-cover-4__nav-prev::after,
+  .home-cover-4__nav-next::after {
+    font-size: 14px;
+  }
+}
+
+
+/* ========================================
+   Home Cover 5 - 餐飲服務
+   ======================================== */
+.home-cover-5 {
+  padding: 80px 20px;
+  background-color: #F3ECE2;
+}
+
+.home-cover-5__title {
+  text-align: center;
+  font-size: 42px;
+  font-weight: 500;
+  color: var(--text-dark);
+  margin-bottom: 50px;
+}
+
+.home-cover-5__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 80px;
+  max-width: 1000px;
+  margin: 0 auto 50px;
+}
+
+.home-cover-5__card {
+  text-align: center;
+}
+
+.home-cover-5__card-image {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  background-color: #ffffff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+  padding: 30px;
+}
+
+.home-cover-5__card-image img {
+  max-width: 80%;
+  max-height: 80%;
+  object-fit: contain;
+}
+
+.home-cover-5__card-name {
+  font-size: 18px;
+  font-weight: 500;
+  color: var(--text-dark);
+}
+
+.home-cover-5__card-name-en {
+  font-size: 14px;
+  color: var(--text-light);
+}
+
+.home-cover-5__btn {
+  background-color: var(--secondary-color);
+  color: #fff;
+}
+
+.home-cover-5__btn:hover {
+  background-color: #a00000;
+}
+
+/* Responsive - Tablet */
+@media (max-width: 1024px) {
+  .home-cover-5 {
+    padding: 60px 20px;
+  }
+
+  .home-cover-5__title {
+    font-size: 36px;
+    margin-bottom: 40px;
+  }
+
+  .home-cover-5__grid {
+    gap: 36px;
+  }
+}
+
+/* Responsive - Mobile */
+@media (max-width: 768px) {
+  .home-cover-5 {
+    padding: 50px 16px;
+  }
+
+  .home-cover-5__title {
+    font-size: 28px;
+    margin-bottom: 30px;
+  }
+
+  .home-cover-5__grid {
+    max-width: 300px;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 40px;
+    margin-bottom: 30px;
+  }
+
+  .home-cover-5__card-image {
+    padding: 15px;
+    margin-bottom: 12px;
+  }
+
+  .home-cover-5__card-name {
+    font-size: 14px;
+  }
+
+  .home-cover-5__card-name-en {
+    font-size: 10px;
+  }
+}
+
+
+/* ========================================
+   Home Cover 6 - 用味好美
+   ======================================== */
+.home-cover-6 {
+  padding-top: 80px;
+  background-color: #ffffff;
+}
+
+.home-cover-6__title {
+  text-align: center;
+  font-size: 42px;
+  font-weight: 500;
+  color: var(--secondary-color);
+  margin-bottom: 16px;
+}
+
+.home-cover-6__subtitle {
+  text-align: center;
+  font-size: 16px;
+  color: var(--text-dark);
+  margin-bottom: 50px;
+}
+
+.home-cover-6__content {
+  position: relative;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.home-cover-6__plate {
+  display: flex;
+  justify-content: center;
+}
+
+.home-cover-6__plate img {
+  max-width: 100%;
+  height: auto;
+}
+
+.home-cover-6__features {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.home-cover-6__feature {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.home-cover-6__feature--1 {
+  left: 5%;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.home-cover-6__feature--2 {
+  left: 25%;
+  top: 5%;
+}
+
+.home-cover-6__feature--3 {
+  right: 25%;
+  top: 5%;
+}
+
+.home-cover-6__feature--4 {
+  right: 5%;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.home-cover-6__feature-icon {
+  width: 70px;
+  height: 70px;
+  background-color: var(--secondary-color);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.home-cover-6__feature-icon img {
+  width: 36px;
+  height: 36px;
+  filter: brightness(0) invert(1);
+}
+
+.home-cover-6__feature-text {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--text-dark);
+}
+
+/* Responsive - Tablet */
+@media (max-width: 1024px) {
+  .home-cover-6 {
+    padding-top: 60px;
+  }
+
+  .home-cover-6__title {
+    font-size: 36px;
+  }
+
+  .home-cover-6__feature-icon {
+    width: 60px;
+    height: 60px;
+  }
+
+  .home-cover-6__feature-icon img {
+    width: 30px;
+    height: 30px;
+  }
+}
+
+/* Responsive - Mobile */
+@media (max-width: 768px) {
+  .home-cover-6 {
+    padding-top: 40px;
+  }
+
+  .home-cover-6__title {
+    font-size: 28px;
+    margin-bottom: 12px;
+  }
+
+  .home-cover-6__subtitle {
+    font-size: 14px;
+    margin-bottom: 30px;
+  }
+
+  .home-cover-6__content {
+    max-width: 100%;
+  }
+
+  .home-cover-6__feature-icon {
+    width: 50px;
+    height: 50px;
+  }
+
+  .home-cover-6__feature-icon img {
+    width: 24px;
+    height: 24px;
+  }
+
+  .home-cover-6__feature-text {
+    font-size: 12px;
+  }
+
+  .home-cover-6__feature--1 {
+    left: 0;
+  }
+
+  .home-cover-6__feature--2 {
+    left: 20%;
+  }
+
+  .home-cover-6__feature--3 {
+    right: 20%;
+  }
+
+  .home-cover-6__feature--4 {
+    right: 0;
+  }
+}
+
+
+/* ========================================
+   Home Cover 7 - 品牌特色
+   ======================================== */
+.home-cover-7 {
+  padding: 80px 20px;
+  background-color: #f5f5f5;
+}
+
+.home-cover-7__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 60px;
+  max-width: 1200px;
+  margin: 0 auto 50px;
+}
+
+.home-cover-7__column {
+  text-align: center;
+  padding: 0 40px;
+  border-right: 1px solid #d0d0d0;
+}
+
+.home-cover-7__column:last-child {
+  border-right: none;
+}
+
+.home-cover-7__title {
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--text-dark);
+  margin-bottom: 20px;
+}
+
+.home-cover-7__text {
+  font-size: 14px;
+  color: var(--text-light);
+  line-height: 2;
+}
+
+.home-cover-7__btn {
+  border: 2px solid var(--secondary-color);
+  background-color: var(--secondary-color);
+  color: #fff;
+}
+
+.home-cover-7__btn:hover {
+  background-color: transparent;
+  color: var(--secondary-color);
+}
+
+/* Responsive - Tablet */
+@media (max-width: 1024px) {
+  .home-cover-7 {
+    padding: 60px 20px;
+  }
+
+  .home-cover-7__grid {
+    gap: 40px;
+  }
+
+  .home-cover-7__title {
+    font-size: 20px;
+  }
+
+  .home-cover-7__text {
+    font-size: 13px;
+  }
+}
+
+/* Responsive - Mobile */
+@media (max-width: 768px) {
+  .home-cover-7 {
+    padding: 50px 16px;
+  }
+
+  .home-cover-7__grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+    max-width: 400px;
+    margin-bottom: 40px;
+  }
+
+  .home-cover-7__column {
+    padding: 0;
+    border-right: none;
+    border-bottom: 1px solid #d0d0d0;
+    padding-bottom: 30px;
+  }
+
+  .home-cover-7__column:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+  }
+
+  .home-cover-7__title {
+    font-size: 20px;
+    margin-bottom: 16px;
+  }
+
+  .home-cover-7__text {
+    font-size: 14px;
+  }
+
+  .home-cover-7__btn {
+    font-size: 14px;
+  }
+}
+
+
+/* ========================================
+   Home Cover 8 - 黃金比例
+   ======================================== */
+.home-cover-8 {
+  position: relative;
+  min-height: 680px;
+  background-position: top;
+  background-image: url('../../images/home/cover-7.png');
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  /* justify-content: center; */
+}
+
+.home-cover-8__content {
+  padding: 10% 80px;
+  color: #fff;
+  z-index: 1;
+}
+
+.home-cover-8__subtitle {
+  font-size: 24px;
+  font-weight: 400;
+  margin-bottom: 16px;
+  opacity: 0.9;
+}
+
+.home-cover-8__title {
+  font-size: 60px;
+  font-weight: 500;
+  line-height: 1.4;
+  margin-bottom: 20px;
+}
+
+.home-cover-8__btn {
+  margin: 0;
+  border: 2px solid #fff;
+  background-color: #fff;
+  color: var(--text-dark);
+}
+
+.home-cover-8__btn:hover {
+  background-color: transparent;
+  color: #fff;
+}
+
+/* Responsive - Tablet */
+@media (max-width: 1024px) {
+  .home-cover-8 {
+    min-height: 350px;
+  }
+
+  .home-cover-8__title {
+    font-size: 48px;
+  }
+}
+
+/* Responsive - Mobile */
+@media (max-width: 768px) {
+  .home-cover-8 {
+    background-position: 85% 10%;
+    min-height: 600px;
+    align-items: flex-end;
+    justify-content: flex-start;
+  }
+
+  .home-cover-8::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.3);
+    z-index: 0;
+  }
+
+  .home-cover-8__content {
+    padding: 48px 20px;
+  }
+
+  .home-cover-8__subtitle {
+    font-size: 20px;
+    margin-bottom: 10px;
+  }
+
+  .home-cover-8__title {
+    font-size: 36px;
+  }
+
+  .home-cover-8__btn {
+    font-size: 14px;
+  }
+}
