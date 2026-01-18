@@ -211,47 +211,50 @@
 <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 <script>
   Promise.all([
+    // HTML 模板
     fetch('./layout/header.html').then(response => response.text()),
     fetch('./layout/footer.html').then(response => response.text()),
     fetch('./home/products.html').then(response => response.text()),
     fetch('./home/recipes.html').then(response => response.text()),
+    // JavaScript 檔案
     fetch('../js/header.js').then(response => response.text()),
-    fetch('../js/products.js').then(response => response.text()),
-    fetch('../js/swiper.js').then(response => response.text()),
-    fetch('../js/home-cover-3.js').then(response => response.text()),
-    fetch('../js/home-cover-3-swiper.js').then(response => response.text()),
-    fetch('../js/recipes.js').then(response => response.text()),
-    fetch('../js/recipes-swiper.js').then(response => response.text()),
-    fetch('../js/home-cover-4.js').then(response => response.text()),
-    fetch('../js/home-cover-4-swiper.js').then(response => response.text())
+    fetch('../js/home/products.js').then(response => response.text()),
+    fetch('../js/home/home-cover-3.js').then(response => response.text()),
+    fetch('../js/home/recipes.js').then(response => response.text()),
+    fetch('../js/home/home-cover-4.js').then(response => response.text()),
+    fetch('../js/utils/swiper-init.js').then(response => response.text()),
+    fetch('../js/home-swiper-config.js').then(response => response.text())
   ])
-    .then(([headerHtml, footerHtml, productsHtml, recipesHtml, headerJs, productsJs, swiperJs, homeCover3Js, homeCover3SwiperJs, recipesJs, recipesSwiperJs, homeCover4Js, homeCover4SwiperJs]) => {
+    .then(([headerHtml, footerHtml, productsHtml, recipesHtml, headerJs, productsJs, homeCover3Js, recipesJs, homeCover4Js, swiperInitJs, swiperConfigJs]) => {
       // 1. 先插入 HTML
       document.getElementById('header').innerHTML = headerHtml;
       document.getElementById('footer').innerHTML = footerHtml;
       document.getElementById('products').innerHTML = productsHtml;
       document.getElementById('recipes').innerHTML = recipesHtml;
 
-      // 2. 執行 JavaScript（順序重要：先生成卡片，再初始化 Swiper）
+      // 2. 執行 JavaScript（順序重要）
+      // 2-1. Header
       const headerFunc = new Function(headerJs);
-      const productsFunc = new Function(productsJs);
-      const swiperFunc = new Function(swiperJs);
-      const homeCover3Func = new Function(homeCover3Js);
-      const homeCover3SwiperFunc = new Function(homeCover3SwiperJs);
-      const recipesFunc = new Function(recipesJs);
-      const recipesSwiperFunc = new Function(recipesSwiperJs);
-      const homeCover4Func = new Function(homeCover4Js);
-      const homeCover4SwiperFunc = new Function(homeCover4SwiperJs);
-
       headerFunc();
+
+      // 2-2. 生成卡片內容
+      const productsFunc = new Function(productsJs);
+      const homeCover3Func = new Function(homeCover3Js);
+      const recipesFunc = new Function(recipesJs);
+      const homeCover4Func = new Function(homeCover4Js);
+
       productsFunc();        // 生成產品卡片
-      swiperFunc();          // 初始化產品 Swiper
       homeCover3Func();      // 生成 Cover 3 卡片
-      homeCover3SwiperFunc(); // 初始化 Cover 3 Swiper
       recipesFunc();         // 生成食譜卡片
-      recipesSwiperFunc();   // 初始化食譜 Swiper
       homeCover4Func();      // 生成熱門商品卡片
-      homeCover4SwiperFunc(); // 初始化熱門商品 Swiper (手機版)
+
+      // 2-3. 初始化 Swiper 共用工具
+      const swiperInitFunc = new Function(swiperInitJs);
+      swiperInitFunc();
+
+      // 2-4. 設定並初始化所有 Swiper
+      const swiperConfigFunc = new Function(swiperConfigJs);
+      swiperConfigFunc();
 
       console.log('✅ All components loaded successfully!');
     })
