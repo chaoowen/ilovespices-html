@@ -58,7 +58,6 @@
   ];
 
   const container = document.querySelector('.products__list');
-  const loadMoreBtn = document.querySelector('.btn'); // 假設載入更多按鈕有 .btn class
 
   // 生成產品卡片 HTML
   function createProductItem(product) {
@@ -87,16 +86,6 @@
 
   // 初始化
   renderProducts();
-
-  // 簡單的載入更多互動（示範用）
-  if (loadMoreBtn) {
-    loadMoreBtn.addEventListener('click', () => {
-      // 這裡可以實作載入更多邏輯，目前僅顯示提示
-      loadMoreBtn.textContent = '沒有更多產品了';
-      loadMoreBtn.style.opacity = '0.5';
-      loadMoreBtn.style.pointerEvents = 'none';
-    });
-  }
 
   console.log('✅ Product list initialized');
 })();

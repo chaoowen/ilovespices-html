@@ -7,22 +7,22 @@
 }
 
 /* --- 主要區塊設定 --- */
-.products-section {
+.spices-section {
   width: 100%;
   padding-bottom: 40px;
 }
 
-.products-headline {
+.spices-headline {
   position: relative;
 }
 
 /* 上方 Banner 區域 */
-.products__banner {
-  background-image: url('../../images/products/products-bg.jpg');
+.spices__banner {
+  background-image: url('../../images/spices/spices-bg.jpg');
 }
 
 /* 下方列表區域 */
-.products__container {
+.spices__container {
   width: 100%;
   position: absolute;
   left: 0;
@@ -138,18 +138,23 @@
 .products__list {
   max-width: 1200px;
   margin: 0 auto;
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 40px;
-  padding: 40px 0;
-  border-top: 1px solid #ccc;
-  border-bottom: 1px solid #ccc;
 }
 
 .products__list-item {
+  position: relative;
   display: flex;
-  flex-direction: column;
-  gap: 20px;
+  gap: 40px;
+  padding: 40px 0;
+}
+
+.products__list-item::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background-color: #ccc;
 }
 
 .products__list-item:hover .products__list-item__image img {
@@ -157,14 +162,14 @@
 }
 
 .products__list-item__image {
-  position: relative;
-  width: 100%;
-  height: 400px;
+  flex-shrink: 0;
+  width: 300px;
+  height: 300px;
   display: flex;
   align-items: center;
   justify-content: center;
-  border-radius: 30px 30px 140px 140px;
-  padding: 30px 30px 40px 30px;
+  border-radius: 10px;
+  padding: 20px;
 }
 
 .products__list-item__image img {
@@ -195,9 +200,42 @@
   background-image: url('../../images/bgImage/bg-5.png');
 }
 
-.products__list-item__title-zh,
+.products__list-item__content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.products__list-item__title-zh {
+  padding-bottom: 4px;
+  font-size: 36px;
+  font-weight: 700;
+}
+
 .products__list-item__title-en {
-  text-align: center;
+  padding-bottom: 8px;
+  font-size: 24px;
+  font-weight: 700;
+}
+
+.products__list-item__subtitle {
+  padding-bottom: 8px;
+  font-size: 18px;
+}
+
+.products__list-item__decs {
+  font-size: 14px;
+}
+
+.products__list-item__recipe {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding-top: 16px;
+}
+
+.products__list-item__recipe span {
+  font-size: 18px;
 }
 
 .products__list-more-btn {
@@ -216,12 +254,12 @@
 
 /* 平板/手機版（1200px 以下）：隱藏 Grid，顯示 Swiper */
 @media (max-width: 1200px) {
-  .products__row--grid {
-    display: none;
+  .spices__container {
+    transform: translateY(-40%);
   }
 
-  .products__container {
-    transform: translateY(-40%);
+  .products__row--grid {
+    display: none;
   }
 
   .products__carousel {
@@ -294,9 +332,11 @@
 
   /* 商品列表 */
   .products__list {
-    grid-template-columns: repeat(3, 1fr);
     gap: 20px;
-    padding: 24px;
+  }
+
+  .products__list-item {
+    padding: 40px 24px;
   }
 }
 
@@ -330,16 +370,23 @@
 
   /* 商品列表 */
   .products__list {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 16px;
+    gap: 24px;
   }
 
-  .products__list-item__image {
-    height: 240px;
+  .products__list-item {
+    flex-direction: column;
+    align-items: center;
   }
 
-  .products__list-item__title-zh,
+  .products__list-item__content {
+    width: 100%;
+  }
+
+  .products__list-item__title-zh {
+    font-size: 28px;
+  }
+
   .products__list-item__title-en {
-    font-size: 14px;
+    font-size: 20px;
   }
 }
