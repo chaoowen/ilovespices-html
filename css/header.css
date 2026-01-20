@@ -1,9 +1,10 @@
 .header {
-  background: #ffffff;
+  width: 100%;
+  background: #fff;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
-  position: sticky;
+  position: fixed;
   top: 0;
-  z-index: 1000;
+  z-index: 100;
   transition: var(--transition);
 }
 
@@ -110,7 +111,7 @@
   padding: 10px;
   color: var(--text-dark);
   position: absolute;
-  right: 20px;
+  right: 0;
   top: 50%;
   transform: translateY(-50%);
   z-index: 1001;
@@ -134,8 +135,12 @@
    Responsive Design - Mobile (768px)
    ======================================== */
 @media (max-width: 768px) {
+  .header__logo-section {
+    text-align: start;
+  }
+
   .header__logo img {
-    height: 70px;
+    height: 60px;
   }
 
   /* 顯示漢堡選單按鈕 */
@@ -185,24 +190,6 @@
    ======================================== */
 @media (max-width: 480px) {
   .header__container {
-    padding: 0 15px;
-  }
-
-  .header__logo img {
-    height: 60px;
-  }
-}
-
-/* ========================================
-   Print Styles
-   ======================================== */
-@media print {
-  .header {
-    position: static;
-    box-shadow: none;
-  }
-
-  .header__mobile-toggle {
-    display: none;
+    padding: 0 20px;
   }
 }
