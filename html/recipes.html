@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>美味食譜 - Recipes</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Antonio:wght@100..700&display=swap" rel="stylesheet">
+
+  <!-- External CSS -->
+  <link rel="stylesheet" href="../css/global.css">
+  <link rel="stylesheet" href="../css/header.css">
+  <link rel="stylesheet" href="../css/footer.css">
+  <link rel="stylesheet" href="../css/recipes/index.css">
+</head>
+
+<body>
+  <!-- header -->
+  <div id="header"></div>
+
+  <main class="main-content recipes-section">
+    <!-- Hero Banner -->
+    <div class="hero-banner recipes__banner">
+      <h1 class="hero-banner__title">Recipes</h1>
+      <p class="hero-banner__subtitle">美味食譜</p>
+    </div>
+
+    <h1 class="page-title">食譜</h1>
+
+    <!-- Search Filter Bar -->
+    <div class="recipes__filter">
+      <div class="recipes__filter-container">
+        <div class="recipes__filter-input">
+          <input type="text" placeholder="輸入食譜關鍵字">
+        </div>
+        <div class="recipes__filter-select">
+          <select>
+            <option value="">產品系列</option>
+            <option value="single">單方香辛料</option>
+            <option value="compound">複方香辛料</option>
+            <option value="grinder">自磨香辛料</option>
+          </select>
+        </div>
+        <div class="recipes__filter-select">
+          <select>
+            <option value="">單方香辛料</option>
+            <option value="pepper">胡椒</option>
+            <option value="basil">羅勒</option>
+            <option value="oregano">奧勒岡</option>
+          </select>
+        </div>
+        <button type="button" class="recipes__filter-btn">搜尋</button>
+      </div>
+    </div>
+
+    <!-- Recipes Grid -->
+    <section class="recipes-list">
+      <div class="recipes-list__container">
+        <!-- Recipe Cards will be injected here by JS -->
+      </div>
+
+      <div class="recipes-list__more">
+        <button class="btn recipes-list__load-btn">載入更多</button>
+      </div>
+    </section>
+  </main>
+
+  <!-- footer -->
+  <div id="footer"></div>
+
+  <script>
+    Promise.all([
+      // HTML 模板
+      fetch('./layout/header.html').then(response => response.text()),
+      fetch('./layout/footer.html').then(response => response.text()),
+      // JavaScript 檔案
+      fetch('../js/header.js').then(response => response.text()),
+      fetch('../js/recipes/recipes-list.js').then(response => response.text()),
+    ])
+      .then(([headerHtml, footerHtml, headerJs, recipesJs]) => {
+        // 1. 插入 HTML
+        document.getElementById('header').innerHTML = headerHtml;
+        document.getElementById('footer').innerHTML = footerHtml;
+
+        // 2. 執行 JavaScript
+        const headerFunc = new Function(headerJs);
+        headerFunc();
+
+        const recipesFunc = new Function(recipesJs);
+        recipesFunc();
+
+        console.log('✅ Recipes page loaded successfully!');
+      })
+      .catch(error => console.error('Error loading components:', error));
+  </script>
+</body>
+
+</html>
