@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>單方香辛料 - Single Product</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Antonio:wght@100..700&display=swap" rel="stylesheet">
+
+  <!-- Swiper CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+
+  <!-- External CSS -->
+  <link rel="stylesheet" href="../css/global.css">
+  <link rel="stylesheet" href="../css/header.css">
+  <link rel="stylesheet" href="../css/footer.css">
+  <link rel="stylesheet" href="../css/home/recipes.css">
+  <link rel="stylesheet" href="../css/home/products.css">
+  <link rel="stylesheet" href="../css/single-product/index.css">
+</head>
+
+<body>
+  <!-- header -->
+  <div id="header"></div>
+
+  <main class="main-content single-product-page">
+
+    <!-- Breadcrumb -->
+    <nav class="breadcrumb">
+      <div class="breadcrumb__container">
+        <a href="./index.html" class="breadcrumb__link">首頁</a>
+        <img src="../images/icons/arrow.svg" />
+        <a href="./products.html" class="breadcrumb__link">商品</a>
+        <img src="../images/icons/arrow.svg" />
+        <span class="breadcrumb__current">單方香辛料</span>
+      </div>
+    </nav>
+
+    <!-- Product Detail Section -->
+    <section class="product-detail">
+      <div class="product-detail__container">
+        <!-- Left: Product Image -->
+        <div class="product-detail__image">
+          <img src="../images/home/product-3.png" alt="味好美 月桂葉">
+        </div>
+
+        <!-- Right: Product Info -->
+        <div class="product-detail__info">
+          <!-- Title -->
+          <h1 class="product-detail__title">味好美 月桂葉</h1>
+          <p class="product-detail__title-en">Bay Leaves</p>
+
+          <!-- Description -->
+          <p class="product-detail__highlight">
+            味好美的月桂葉，是特選來自土耳其的完整葉片，香氣特別濃郁，用量更節省！
+          </p>
+          <p class="product-detail__desc">
+            被廣泛使用於法式、印度及地中海料理，可用於料理各式肉類、熬湯、蔬菜和醬汁烹調中，亦適合用來燉魚、燉肉尤適合海鮮烹調，含有淡淡的薄荷香氣與木質風味。
+          </p>
+
+          <!-- Product Specs -->
+          <div class="product-detail__specs">
+            <div class="product-detail__spec">
+              <img src="../images/icons/barcode.svg" alt="SKU">
+              <span class="product-detail__spec-label">SKU編碼</span>
+              <span class="product-detail__spec-value">MA03BL</span>
+            </div>
+            <div class="product-detail__spec">
+              <img src="../images/icons/weight.svg" alt="重量">
+              <span class="product-detail__spec-label">產品重量</span>
+              <span class="product-detail__spec-value">3 公克</span>
+            </div>
+            <div class="product-detail__spec">
+              <img src="../images/icons/category.svg" alt="分類">
+              <span class="product-detail__spec-label">產品分類</span>
+              <span class="product-detail__spec-value">單方香辛料</span>
+            </div>
+            <div class="product-detail__spec">
+              <img src="../images/icons/calendar.svg" alt="期限">
+              <span class="product-detail__spec-label">保存期限</span>
+              <span class="product-detail__spec-value">4年</span>
+            </div>
+          </div>
+
+          <!-- Channel Selection -->
+          <div class="product-detail__channels">
+            <!-- 實體通路 -->
+            <div class="product-detail__channel">
+              <span class="product-detail__channel-label">實體通路</span>
+              <div class="product-detail__channel-select">
+                <div class="select-wrapper">
+                  <select class="form-select">
+                    <option value="">請選擇</option>
+                    <option value="carrefour">家樂福</option>
+                    <option value="pxmart">全聯</option>
+                    <option value="costco">好市多</option>
+                  </select>
+                  <div class="select-arrow"></div>
+                </div>
+                <button type="button" class="product-detail__channel-btn">前往</button>
+              </div>
+            </div>
+            <!-- 線上通路 -->
+            <div class="product-detail__channel">
+              <span class="product-detail__channel-label">線上通路</span>
+              <div class="product-detail__channel-select">
+                <div class="select-wrapper">
+                  <select class="form-select">
+                    <option value="">請選擇</option>
+                    <option value="shopee">蝦皮購物</option>
+                    <option value="momo">momo購物網</option>
+                    <option value="pchome">PChome</option>
+                  </select>
+                  <div class="select-arrow"></div>
+                </div>
+                <button type="button" class="product-detail__channel-btn">前往</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- CTA Buttons -->
+          <div class="product-detail__cta">
+            <a href="#" class="product-detail__cta-btn product-detail__cta-btn--primary">
+              <img src="../images/icons/business.svg" alt="">
+              <span>業務洽談</span>
+            </a>
+            <a href="#" class="product-detail__cta-btn product-detail__cta-btn--secondary">
+              <img src="../images/icons/support.svg" alt="">
+              <span>聯繫客服</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 相關食譜 Section -->
+    <section class="recipes">
+      <div class="recipes__container">
+        <h2 class="page-title">相關食譜</h2>
+
+        <!-- Swiper Carousel -->
+        <div class="recipes__carousel">
+          <div class="swiper recipes-swiper">
+            <div class="swiper-wrapper">
+              <!-- Recipe Cards 由 JS 動態生成 -->
+            </div>
+
+            <!-- Pagination Dots -->
+            <div class="swiper-pagination recipes-pagination"></div>
+          </div>
+          <!-- Navigation Arrows (Desktop Only) -->
+          <div class="recipes__nav-prev"></div>
+          <div class="recipes__nav-next"></div>
+        </div>
+
+        <a href="./recipes.html" class="btn recipes__btn">更多食譜</a>
+      </div>
+    </section>
+
+    <!-- 單方香辛料 Section -->
+    <section class="single-spice single-spice--no-tabs">
+      <!-- Content Container -->
+      <div class="single-spice__container">
+        <!-- Section Title -->
+        <h2 class="page-title">單方辛香料</h2>
+
+        <!-- Swiper Carousel -->
+        <div class="single-spice__carousel">
+          <div class="swiper single-spice-swiper">
+            <div class="swiper-wrapper">
+              <!-- Product Cards 由 JS 動態生成 -->
+            </div>
+
+            <!-- Navigation Arrows -->
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
+
+            <!-- Pagination Dots -->
+            <div class="swiper-pagination"></div>
+          </div>
+        </div>
+
+        <!-- View More Button -->
+        <a href="./products.html" class="btn single-spice__btn">更多</a>
+      </div>
+    </section>
+  </main>
+
+  <!-- footer -->
+  <div id="footer"></div>
+</body>
+
+<!-- Swiper JS -->
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<script>
+  Promise.all([
+    // HTML 模板
+    fetch('./layout/header.html').then(response => response.text()),
+    fetch('./layout/footer.html').then(response => response.text()),
+    // JavaScript 檔案
+    fetch('../js/header.js').then(response => response.text()),
+    fetch('../js/single-product/related-recipes.js').then(response => response.text()),
+    fetch('../js/home/products.js').then(response => response.text()),
+    fetch('../js/utils/swiper-init.js').then(response => response.text()),
+    fetch('../js/single-product/swiper-config.js').then(response => response.text()),
+  ])
+    .then(([headerHtml, footerHtml, headerJs, relatedRecipesJs, productsJs, swiperInitJs, swiperConfigJs]) => {
+      // 1. 插入 HTML
+      document.getElementById('header').innerHTML = headerHtml;
+      document.getElementById('footer').innerHTML = footerHtml;
+
+      // 2. 執行 JavaScript
+      const headerFunc = new Function(headerJs);
+      headerFunc();
+
+      // 3. 生成相關食譜卡片
+      const relatedRecipesFunc = new Function(relatedRecipesJs);
+      relatedRecipesFunc();
+
+      // 4. 生成產品卡片 (使用首頁 products.js)
+      const productsFunc = new Function(productsJs);
+      productsFunc();
+
+      // 5. 初始化 Swiper 共用工具
+      const swiperInitFunc = new Function(swiperInitJs);
+      swiperInitFunc();
+
+      // 6. 設定並初始化 Swiper
+      const swiperConfigFunc = new Function(swiperConfigJs);
+      swiperConfigFunc();
+
+      console.log('✅ Single product page loaded successfully!');
+    })
+    .catch(error => console.error('Error loading components:', error));
+</script>
+
+</html>
