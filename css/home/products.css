@@ -316,6 +316,10 @@
    Responsive Design - Mobile (768px)
    ======================================== */
 @media (max-width: 768px) {
+  .single-spice__container {
+    padding: 0;
+  }
+
   .single-spice {
     padding: 40px 0;
   }

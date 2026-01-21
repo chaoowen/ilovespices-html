@@ -30,10 +30,6 @@
   margin-bottom: 40px;
 }
 
-.recipes-swiper {
-  padding: 20px 0 60px;
-}
-
 /* 讓所有 slide 高度一致 */
 .recipes-swiper .swiper-wrapper {
   align-items: stretch;
@@ -182,6 +178,10 @@
    Responsive Design - Mobile (768px)
    ======================================== */
 @media (max-width: 768px) {
+  .recipes__container {
+    padding: 0;
+  }
+
   .recipes {
     padding: 50px 0;
   }
@@ -193,10 +193,6 @@
   .recipes__title {
     font-size: 28px;
     margin-bottom: 30px;
-  }
-
-  .recipes-swiper {
-    padding: 10px 0 50px;
   }
 
   .recipe-card__name {

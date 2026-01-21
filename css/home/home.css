@@ -253,8 +253,8 @@
   background-color: #fff;
   border-radius: 50px;
   color: var(--text-dark);
-  font-size: 14px;
-  font-weight: 500;
+  font-size: 16px;
+  font-weight: 600;
   text-decoration: none;
   text-align: center;
   transition: var(--transition);
@@ -357,6 +357,7 @@
   .home-cover-3__carousel {
     display: block;
     position: relative;
+    padding: 0;
   }
 
   .home-cover-3-swiper {
@@ -368,14 +369,9 @@
     height: 100%;
   }
 
-  .home-cover-3__card-text {
-    font-size: 12px;
-  }
-
-  .home-cover-3__card-btn {
-    font-size: 12px;
+  /* .home-cover-3__card-btn {
     padding: 8px 16px;
-  }
+  } */
 
   /* Navigation arrows */
   .home-cover-3__nav-prev,
@@ -411,14 +407,6 @@
     content: 'next';
   }
 }
-
-/* Responsive - Small Mobile */
-@media (max-width: 480px) {
-  .home-cover-3__carousel {
-    padding: 0 16px;
-  }
-}
-
 
 /* ========================================
    Home Cover 4 - 熱門商品
@@ -530,7 +518,7 @@
     display: block;
     position: relative;
     z-index: 1;
-    padding: 0 50px;
+    padding: 0 24px;
   }
 
   .home-cover-4-swiper {
@@ -593,7 +581,7 @@
   }
 
   .home-cover-4__carousel {
-    padding: 0 40px;
+    padding: 0;
   }
 
   .home-cover-4__card-name {

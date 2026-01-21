@@ -113,6 +113,8 @@
     slidesPerView: 1.5,
     spaceBetween: 16,
     centeredSlides: false,
+    slidesOffsetBefore: 20,
+    slidesOffsetAfter: 20,
 
     navigation: {
       nextEl: '.home-cover-3__nav-next',
@@ -136,6 +138,8 @@
     slidesPerView: 1.5,
     spaceBetween: 16,
     centeredSlides: false,
+    slidesOffsetBefore: 40,
+    slidesOffsetAfter: 40,
 
     navigation: {
       nextEl: '.home-cover-4__nav-next',
