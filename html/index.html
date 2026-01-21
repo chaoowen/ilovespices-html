@@ -223,7 +223,7 @@
     fetch('../js/home/recipes.js').then(response => response.text()),
     fetch('../js/home/home-cover-4.js').then(response => response.text()),
     fetch('../js/utils/swiper-init.js').then(response => response.text()),
-    fetch('../js/home-swiper-config.js').then(response => response.text())
+    fetch('../js/home/swiper-config.js').then(response => response.text())
   ])
     .then(([headerHtml, footerHtml, productsHtml, recipesHtml, headerJs, productsJs, homeCover3Js, recipesJs, homeCover4Js, swiperInitJs, swiperConfigJs]) => {
       // 1. 先插入 HTML
