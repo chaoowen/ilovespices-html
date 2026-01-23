@@ -1,0 +1,553 @@
+/* ========================================
+   Recipe Detail Page Styles
+   ======================================== */
+
+.recipe-detail-page .page-title {
+  padding-top: 0;
+}
+
+
+/* ========================================
+   Recipe Hero Section
+   ======================================== */
+.recipe-hero {
+  background-color: #F6F2EE;
+}
+
+/* Header Area */
+.recipe-hero__header {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Breadcrumb */
+.recipe-hero__breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  margin-bottom: 20px;
+}
+
+.recipe-hero__breadcrumb a {
+  color: var(--text-light);
+  text-decoration: none;
+}
+
+.recipe-hero__breadcrumb a:hover {
+  color: var(--secondary-color);
+}
+
+.recipe-hero__breadcrumb span {
+  color: var(--text-dark);
+}
+
+.recipe-hero__breadcrumb img {
+  width: 12px;
+  height: 12px;
+  opacity: 0.5;
+}
+
+/* Title Row */
+.recipe-hero__title-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  gap: 40px;
+  padding-bottom: 20px;
+}
+
+.recipe-hero__title {
+  font-size: 32px;
+  font-weight: 700;
+  color: var(--text-dark);
+}
+
+/* Meta Info */
+.recipe-hero__meta {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+.recipe-hero__meta-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.recipe-hero__meta-item img {
+  width: 16px;
+  height: 16px;
+}
+
+.recipe-hero__meta-label {
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.recipe-hero__meta-value {
+  font-size: 14px;
+}
+
+/* Hero Image */
+.recipe-hero__image {
+  padding: 20px;
+  background-color: #fff;
+  margin-bottom: 20px;
+}
+
+.recipe-hero__image img {
+  width: 100%;
+  aspect-ratio: 2 / 1;
+  object-fit: cover;
+}
+
+
+/* ========================================
+   Recipe Content Section (3 Columns)
+   ======================================== */
+.recipe-content {
+  background-color: #F6F2EE;
+  padding: 80px 0;
+}
+
+.recipe-content__container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 30px;
+  align-items: stretch;
+}
+
+/* 三欄等高 */
+.recipe-ingredients,
+.recipe-steps,
+.recipe-products {
+  display: flex;
+  flex-direction: column;
+}
+
+.recipe-ingredients__list,
+.recipe-steps__list,
+.recipe-products__list {
+  flex: 1;
+  /* 撐滿剩餘高度 */
+}
+
+/* Section Header */
+.recipe-section-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 16px 20px;
+  background-color: #E59D61;
+}
+
+.recipe-section-header img {
+  width: 28px;
+  height: 28px;
+  filter: brightness(0) invert(1);
+}
+
+.recipe-section-header h2 {
+  font-size: 18px;
+  font-weight: 700;
+  color: #fff;
+  margin: 0;
+}
+
+
+/* ========================================
+   食材準備 (Ingredients)
+   ======================================== */
+.recipe-ingredients__list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  padding: 20px;
+  background: #fff;
+}
+
+.recipe-ingredients__item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 8px 0;
+}
+
+.recipe-ingredients__item:last-child {
+  border-bottom: none;
+}
+
+.recipe-ingredients__item input[type="checkbox"] {
+  width: 16px;
+  height: 16px;
+  accent-color: var(--secondary-color);
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+.recipe-ingredients__item label {
+  flex: 1;
+  font-size: 14px;
+  color: var(--text-dark);
+  cursor: pointer;
+}
+
+.recipe-ingredients__item span {
+  font-size: 14px;
+  color: var(--text-light);
+  min-width: 70px;
+  text-align: right;
+}
+
+
+/* ========================================
+   作法步驟 (Steps)
+   ======================================== */
+.recipe-steps__list {
+  list-style: none;
+  padding: 20px;
+  margin: 0;
+  background: #fff;
+}
+
+.recipe-steps__item {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 16px 0;
+}
+
+/* 連接線：從數字圓圈往下延伸到下一個數字 */
+.recipe-steps__item::before {
+  content: '';
+  position: absolute;
+  left: 9px;
+  /* 數字圓圈中心 (20px / 2 - 1px) */
+  top: calc(50% + 10px);
+  /* 從數字底部開始 */
+  bottom: calc(-50% - 10px);
+  /* 延伸到下一個數字頂部 */
+  width: 2px;
+  background-color: #E8A857;
+}
+
+/* 最後一個 item 不需要線條 */
+.recipe-steps__item:last-child::before {
+  display: none;
+}
+
+.recipe-steps__number {
+  width: 20px;
+  height: 20px;
+  background-color: #E8A857;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  font-weight: 700;
+  color: #fff;
+  flex-shrink: 0;
+  position: relative;
+  z-index: 1;
+}
+
+.recipe-steps__image {
+  width: 100%;
+  aspect-ratio: 3 / 2;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.recipe-steps__image img {
+  width: 100%;
+  object-fit: cover;
+}
+
+
+.recipe-steps__text {
+  flex: 1;
+  font-size: 14px;
+  color: var(--text-dark);
+  line-height: 1.8;
+  padding-top: 4px;
+}
+
+
+/* ========================================
+   推薦產品 (Recommended Products)
+   ======================================== */
+.recipe-products__list {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  background-color: #fff;
+}
+
+.recipe-products__item {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  text-decoration: none;
+}
+
+.recipe-products__image {
+  width: 100px;
+  height: 100px;
+  background-color: #fff;
+  border-radius: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  background-image: url('../../images/bgImage/bg-6.png');
+  background-size: cover;
+  background-position: center;
+}
+
+.recipe-products__image img {
+  max-width: 80px;
+  max-height: 80px;
+  object-fit: contain;
+}
+
+.recipe-products__info {
+  flex: 1;
+}
+
+.recipe-products__name {
+  font-size: 14px;
+  font-weight: 400;
+  margin-bottom: 4px;
+}
+
+.recipe-products__name-en {
+  font-size: 12px;
+  color: var(--text-light);
+  line-height: 1.4;
+}
+
+
+/* ========================================
+   相關食譜 Section - Navigation Arrows
+   桌機版才顯示，手機版隱藏
+   ======================================== */
+.recipe-detail-page .recipes {
+  background-color: #fff;
+}
+
+.recipe-detail-page .recipes__carousel {
+  position: relative;
+  padding-top: 40px;
+}
+
+.recipe-detail-page .recipes__nav-prev,
+.recipe-detail-page .recipes__nav-next {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 40px;
+  height: 40px;
+  background: #ffffff;
+  border-radius: 50%;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  cursor: pointer;
+  z-index: 10;
+}
+
+.recipe-detail-page .recipes__nav-prev {
+  left: 0;
+}
+
+.recipe-detail-page .recipes__nav-next {
+  right: 0;
+}
+
+.recipe-detail-page .recipes__nav-prev::after,
+.recipe-detail-page .recipes__nav-next::after {
+  font-family: swiper-icons;
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--secondary-color);
+}
+
+.recipe-detail-page .recipes__nav-prev::after {
+  content: 'prev';
+}
+
+.recipe-detail-page .recipes__nav-next::after {
+  content: 'next';
+}
+
+/* 桌機版需要 padding 給 nav arrows 空間 */
+@media (min-width: 1025px) {
+  .recipe-detail-page .recipes__carousel {
+    padding-left: 50px;
+    padding-right: 50px;
+  }
+}
+
+/* 平板/手機版隱藏 nav arrows */
+@media (max-width: 1024px) {
+
+  .recipe-detail-page .recipes__nav-prev,
+  .recipe-detail-page .recipes__nav-next {
+    display: none;
+  }
+}
+
+
+/* ========================================
+   Responsive - Tablet (1024px)
+   ======================================== */
+@media (max-width: 1024px) {
+  .recipe-hero__title-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+  }
+
+  .recipe-hero__title {
+    font-size: 28px;
+  }
+
+  .recipe-hero__meta {
+    gap: 24px;
+  }
+
+  .recipe-content__container {
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+  }
+
+  /* 推薦產品移到下方，佔滿整排 */
+  .recipe-products {
+    grid-column: 1 / -1;
+  }
+
+  .recipe-products__list {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  .recipe-products__item {
+    flex: 1;
+    min-width: 200px;
+  }
+}
+
+
+/* ========================================
+   Responsive - Mobile (768px)
+   ======================================== */
+@media (max-width: 768px) {
+  .recipe-hero__breadcrumb {
+    font-size: 12px;
+    margin-bottom: 16px;
+  }
+
+  .recipe-hero__title-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+  }
+
+  .recipe-hero__title {
+    font-size: 22px;
+  }
+
+  .recipe-hero__meta {
+    flex-wrap: wrap;
+    gap: 12px 20px;
+  }
+
+  .recipe-content {
+    padding: 40px 0 60px;
+  }
+
+  .recipe-content__container {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .recipe-section-header {
+    padding: 14px 16px;
+  }
+
+  .recipe-section-header h2 {
+    font-size: 16px;
+  }
+
+  .recipe-ingredients__item {
+    padding: 12px 0;
+  }
+
+  .recipe-ingredients__item label {
+    font-size: 13px;
+  }
+
+  .recipe-ingredients__item span {
+    font-size: 13px;
+    min-width: 60px;
+  }
+
+  .recipe-steps__item {
+    gap: 16px;
+    padding: 14px 0;
+  }
+
+  .recipe-steps__item::before {
+    left: 12px;
+  }
+
+  .recipe-steps__number {
+    width: 28px;
+    height: 28px;
+    font-size: 12px;
+  }
+
+  .recipe-steps__list::before {
+    left: 13px;
+  }
+
+  .recipe-steps__text {
+    font-size: 13px;
+  }
+
+  .recipe-products__list {
+    flex-direction: column;
+  }
+
+  .recipe-products__item {
+    padding: 14px;
+  }
+
+  .recipe-products__image {
+    width: 70px;
+    height: 70px;
+  }
+
+  .recipe-products__image img {
+    max-width: 50px;
+    max-height: 50px;
+  }
+
+  .recipe-products__name {
+    font-size: 13px;
+  }
+
+  .recipe-products__name-en {
+    font-size: 11px;
+  }
+}

@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>食譜詳情 - Recipe Detail</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Antonio:wght@100..700&display=swap" rel="stylesheet">
+
+  <!-- Swiper CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+
+  <!-- External CSS -->
+  <link rel="stylesheet" href="../css/global.css">
+  <link rel="stylesheet" href="../css/header.css">
+  <link rel="stylesheet" href="../css/footer.css">
+  <link rel="stylesheet" href="../css/home/recipes.css">
+  <link rel="stylesheet" href="../css/recipe-detail/index.css">
+</head>
+
+<body>
+  <!-- header -->
+  <div id="header"></div>
+
+  <main class="main-content recipe-detail-page">
+
+    <!-- Recipe Hero Section -->
+
+    <!-- Recipe Content Section -->
+    <section class="recipe-content">
+      <div class="recipe-hero__header">
+        <div class="recipe-hero__header-container">
+          <!-- Breadcrumb -->
+          <nav class="recipe-hero__breadcrumb">
+            <a href="./index.html">首頁</a>
+            <img src="../images/icons/arrow.svg" alt="">
+            <span>美味食譜</span>
+          </nav>
+
+          <!-- Title & Meta Row -->
+          <div class="recipe-hero__title-row">
+            <h1 class="recipe-hero__title">鑲餡豬肉迷你甜椒</h1>
+            <div class="recipe-hero__meta">
+              <div class="recipe-hero__meta-item">
+                <img src="../images/icons/user.svg" alt="份量">
+                <span class="recipe-hero__meta-label">份量</span>
+                <span class="recipe-hero__meta-value">1人份</span>
+              </div>
+              <div class="recipe-hero__meta-item">
+                <img src="../images/icons/time-dark.svg" alt="準備時間">
+                <span class="recipe-hero__meta-label">準備時間</span>
+                <span class="recipe-hero__meta-value">20 分鐘</span>
+              </div>
+              <div class="recipe-hero__meta-item">
+                <img src="../images/icons/gloves.svg" alt="調理時間">
+                <span class="recipe-hero__meta-label">調理時間</span>
+                <span class="recipe-hero__meta-value">1小時 30 分鐘</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Hero Image -->
+        <div class="recipe-hero__image">
+          <img src="../images/home/recipe-1.jpg" alt="鑲餡豬肉迷你甜椒">
+        </div>
+      </div>
+
+      <div class="recipe-content__container">
+
+        <!-- Column 1: 食材準備 -->
+        <div class="recipe-ingredients">
+          <div class="recipe-section-header">
+            <img src="../images/icons/vegitable.svg" alt="">
+            <h2>食材準備</h2>
+          </div>
+          <ul class="recipe-ingredients__list">
+            <li class="recipe-ingredients__item">
+              <input type="checkbox" id="ing-1">
+              <label for="ing-1">味好美墨西哥番椒調味粉</label>
+              <span>8 公克</span>
+            </li>
+            <li class="recipe-ingredients__item">
+              <input type="checkbox" id="ing-2">
+              <label for="ing-2">迷你甜椒</label>
+              <span>4 條</span>
+            </li>
+            <li class="recipe-ingredients__item">
+              <input type="checkbox" id="ing-3">
+              <label for="ing-3">豬絞肉</label>
+              <span>150 公克</span>
+            </li>
+            <li class="recipe-ingredients__item">
+              <input type="checkbox" id="ing-4">
+              <label for="ing-4">橄欖油</label>
+              <span>10 公克</span>
+            </li>
+            <li class="recipe-ingredients__item">
+              <input type="checkbox" id="ing-5">
+              <label for="ing-5">墨西哥辣醬</label>
+              <span>80 公克</span>
+            </li>
+            <li class="recipe-ingredients__item">
+              <input type="checkbox" id="ing-6">
+              <label for="ing-6">裝飾生菜</label>
+              <span>適量</span>
+            </li>
+            <li class="recipe-ingredients__item">
+              <input type="checkbox" id="ing-7">
+              <label for="ing-7">味好美洋蔥粉</label>
+              <span>50 公克</span>
+            </li>
+            <li class="recipe-ingredients__item">
+              <input type="checkbox" id="ing-8">
+              <label for="ing-8">味好美香蒜粉</label>
+              <span>10 公克</span>
+            </li>
+            <li class="recipe-ingredients__item">
+              <input type="checkbox" id="ing-9">
+              <label for="ing-9">味好美薑黃粉</label>
+              <span>3 公克</span>
+            </li>
+            <li class="recipe-ingredients__item">
+              <input type="checkbox" id="ing-10">
+              <label for="ing-10">味好美紅辣椒粉</label>
+              <span>5 公克</span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Column 2: 作法步驟 -->
+        <div class="recipe-steps">
+          <div class="recipe-section-header">
+            <img src="../images/icons/fried.svg" alt="">
+            <h2>作法步驟</h2>
+          </div>
+          <ol class="recipe-steps__list">
+            <li class="recipe-steps__item">
+              <div class="recipe-steps__number">1</div>
+              <div>
+                <div class="recipe-steps__image">
+                  <img src="../images/home/recipe-1.jpg" alt="">
+                </div>
+                <p class="recipe-steps__text">將迷你甜椒切對半、去籽備用。</p>
+              </div>
+            </li>
+            <li class="recipe-steps__item">
+              <div class="recipe-steps__number">2</div>
+              <p class="recipe-steps__text">將豬絞肉、味好美洋蔥粉、味好美香蒜粉、味好美薑黃粉、味好美紅辣椒粉、蔥花、味好美墨西哥番椒調味粉攪拌均勻至黏稠即可，鑲入甜椒內備用。</p>
+            </li>
+            <li class="recipe-steps__item">
+              <div class="recipe-steps__number">3</div>
+              <p class="recipe-steps__text">將已鑲餡的甜椒淋上橄欖油，再放入烤箱180度烤至表面微焦全熟即可取出。</p>
+            </li>
+            <li class="recipe-steps__item">
+              <div class="recipe-steps__number">4</div>
+              <p class="recipe-steps__text">將墨西哥辣醬墊底，放上烤好的鑲餡甜椒，裝飾生菜點綴，再撒上少許味好美墨西哥番椒調味粉即可。</p>
+            </li>
+          </ol>
+        </div>
+
+        <!-- Column 3: 推薦產品 -->
+        <div class="recipe-products">
+          <div class="recipe-section-header">
+            <img src="../images/icons/seasioning.svg" alt="">
+            <h2>推薦產品</h2>
+          </div>
+          <div class="recipe-products__list">
+            <a href="./single-product.html" class="recipe-products__item">
+              <div class="recipe-products__image">
+                <img src="../images/home/product-1.png" alt="味好美洋蔥粉">
+              </div>
+              <div class="recipe-products__info">
+                <p class="recipe-products__name">味好美洋蔥粉</p>
+                <p class="recipe-products__name-en">Grill Mates, Chipotle Pepper Marinade</p>
+              </div>
+            </a>
+            <a href="./single-product.html" class="recipe-products__item">
+              <div class="recipe-products__image">
+                <img src="../images/home/product-2.png" alt="味好美香蒜粉">
+              </div>
+              <div class="recipe-products__info">
+                <p class="recipe-products__name">味好美香蒜粉</p>
+                <p class="recipe-products__name-en">Grill Mates, Chipotle Pepper Marinade</p>
+              </div>
+            </a>
+            <a href="./single-product.html" class="recipe-products__item">
+              <div class="recipe-products__image">
+                <img src="../images/home/product-3.png" alt="味好美薑黃粉">
+              </div>
+              <div class="recipe-products__info">
+                <p class="recipe-products__name">味好美薑黃粉</p>
+                <p class="recipe-products__name-en">Grill Mates, Chipotle Pepper Marinade</p>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 相關食譜 Section -->
+    <section class="recipes">
+      <div class="recipes__container">
+        <h2 class="page-title">相關食譜</h2>
+
+        <!-- Swiper Carousel -->
+        <div class="recipes__carousel">
+          <div class="swiper recipes-swiper">
+            <div class="swiper-wrapper">
+              <!-- Recipe Cards 由 JS 動態生成 -->
+            </div>
+
+            <!-- Pagination Dots -->
+            <div class="swiper-pagination recipes-pagination"></div>
+          </div>
+          <!-- Navigation Arrows (Desktop Only) -->
+          <div class="recipes__nav-prev"></div>
+          <div class="recipes__nav-next"></div>
+        </div>
+
+        <a href="./recipes.html" class="btn recipes__btn">更多食譜</a>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- footer -->
+  <div id="footer"></div>
+</body>
+
+<!-- Swiper JS -->
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<script>
+  Promise.all([
+    // HTML 模板
+    fetch('./layout/header.html').then(response => response.text()),
+    fetch('./layout/footer.html').then(response => response.text()),
+    // JavaScript 檔案
+    fetch('../js/header.js').then(response => response.text()),
+    fetch('../js/single-product/related-recipes.js').then(response => response.text()),
+    fetch('../js/utils/swiper-init.js').then(response => response.text()),
+    fetch('../js/recipe-detail/swiper-config.js').then(response => response.text()),
+  ])
+    .then(([headerHtml, footerHtml, headerJs, relatedRecipesJs, swiperInitJs, swiperConfigJs]) => {
+      // 1. 插入 HTML
+      document.getElementById('header').innerHTML = headerHtml;
+      document.getElementById('footer').innerHTML = footerHtml;
+
+      // 2. 執行 JavaScript
+      const headerFunc = new Function(headerJs);
+      headerFunc();
+
+      // 3. 生成相關食譜卡片
+      const relatedRecipesFunc = new Function(relatedRecipesJs);
+      relatedRecipesFunc();
+
+      // 4. 初始化 Swiper 共用工具
+      const swiperInitFunc = new Function(swiperInitJs);
+      swiperInitFunc();
+
+      // 5. 設定並初始化 Swiper
+      const swiperConfigFunc = new Function(swiperConfigJs);
+      swiperConfigFunc();
+
+      console.log('✅ Recipe detail page loaded successfully!');
+    })
+    .catch(error => console.error('Error loading components:', error));
+</script>
+
+</html>
