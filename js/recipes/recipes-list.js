@@ -68,7 +68,7 @@
   // 生成卡片 HTML（與首頁相同結構）
   function createRecipeCard(recipe) {
     return `
-      <a href="#" class="recipe-card">
+      <a href="./recipe-detail.html" class="recipe-card">
         <div class="recipe-card__image">
           <img src="${recipe.image}" alt="${recipe.title}">
         </div>

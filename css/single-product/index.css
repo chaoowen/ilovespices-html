@@ -16,6 +16,10 @@
 /* ========================================
    Breadcrumb
    ======================================== */
+.breadcrumb {
+  background-color: #F6F2EE;
+}
+
 .breadcrumb__container {
   max-width: 1200px;
   margin: 0 auto;

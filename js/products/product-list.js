@@ -63,9 +63,9 @@
   function createProductItem(product) {
     return `
       <div class="products__list-item">
-        <div class="products__list-item__image">
+        <a href="./single-product.html" class="products__list-item__image">
           <img src="${product.image}" alt="${product.nameZh}">
-        </div>
+        </a>
         <div class="products__list-item__content">
           <p class="products__list-item__title-zh">${product.nameZh}</p>
           <p class="products__list-item__title-en">${product.nameEn}</p>

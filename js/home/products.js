@@ -48,7 +48,7 @@
   function createProductCard(product) {
     return `
       <div class="swiper-slide">
-        <div class="product-card">
+        <a href="./single-product.html" class="product-card">
           <div class="product-card__image">
             <img src="${product.image}" alt="${product.nameZh}">
           </div>
@@ -56,7 +56,7 @@
             <p class="product-card__name-zh">${product.nameZh}</p>
             <p class="product-card__name-en">${product.nameEn}</p>
           </div>
-        </div>
+        </a>
       </div>
     `;
   }
