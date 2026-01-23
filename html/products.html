@@ -31,6 +31,7 @@
   <section class="main-content products-section">
     <div class="products-headline">
       <div class="hero-banner products__banner">
+        <img class="hero-banner__bg" src="../images/products/products-bg.jpg" alt="" data-parallax="0.3">
         <h2 class="hero-banner__title">Products</h2>
         <p class="hero-banner__subtitle">產品介紹</p>
       </div>
@@ -90,8 +91,9 @@
     fetch('../js/utils/swiper-init.js').then(response => response.text()),
     fetch('../js/products/swiper-config.js').then(response => response.text()),
     fetch('../js/products/product-list.js').then(response => response.text()),
+    fetch('../js/utils/parallax.js').then(response => response.text()),
   ])
-    .then(([headerHtml, footerHtml, headerJs, productRowJs, swiperInitJs, swiperConfigJs, productListJs]) => {
+    .then(([headerHtml, footerHtml, headerJs, productRowJs, swiperInitJs, swiperConfigJs, productListJs, parallaxJs]) => {
       // 1. 先插入 HTML
       document.getElementById('header').innerHTML = headerHtml;
       document.getElementById('footer').innerHTML = footerHtml;
@@ -115,6 +117,10 @@
       // 6. 生成下方產品列表
       const productListFunc = new Function(productListJs);
       productListFunc();
+
+      // 7. 初始化視差效果
+      const parallaxFunc = new Function(parallaxJs);
+      parallaxFunc();
 
       console.log('✅ Products page loaded successfully!');
     })

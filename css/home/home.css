@@ -4,14 +4,26 @@
 .home-cover-1 {
   width: 100%;
   height: 680px;
-  background-image: url('../../images/home/cover-1.png');
-  background-size: cover;
-  background-position: center;
   display: flex;
   align-items: center;
   justify-content: center;
   position: relative;
   z-index: 1;
+  overflow: hidden; /* 視差效果必須 */
+}
+
+/* 背景圖（視差效果） */
+.home-cover-1__bg {
+  position: absolute;
+  top: -10%; /* 往上偏移，避免頂部空白 */
+  left: 0;
+  width: 100%;
+  height: 120%;
+  object-fit: cover;
+  object-position: center;
+  z-index: -1;
+  will-change: transform;
+  pointer-events: none;
 }
 
 .home-cover-1__content {
@@ -413,12 +425,25 @@
    ======================================== */
 .home-cover-4 {
   padding: 80px 20px;
-  background-image: url('../../images/home/cover-4.jpg');
-  background-size: cover;
-  background-position: center;
   position: relative;
+  overflow: hidden; /* 視差效果必須 */
 }
 
+/* 背景圖（視差效果） */
+.home-cover-4__bg {
+  position: absolute;
+  top: -10%; /* 往上偏移，避免頂部空白 */
+  left: 0;
+  width: 100%;
+  height: 120%;
+  object-fit: cover;
+  object-position: center;
+  z-index: -1;
+  will-change: transform;
+  pointer-events: none;
+}
+
+/* 黑色遮罩 */
 .home-cover-4::before {
   content: '';
   position: absolute;
@@ -1015,12 +1040,23 @@
 .home-cover-8 {
   position: relative;
   min-height: 680px;
-  background-position: top;
-  background-image: url('../../images/home/cover-7.png');
-  background-size: cover;
   display: flex;
   align-items: center;
-  /* justify-content: center; */
+  overflow: hidden; /* 視差效果必須 */
+}
+
+/* 背景圖（視差效果） */
+.home-cover-8__bg {
+  position: absolute;
+  top: -10%; /* 往上偏移，避免頂部空白 */
+  left: 0;
+  width: 100%;
+  height: 120%;
+  object-fit: cover;
+  object-position: top;
+  z-index: -1;
+  will-change: transform;
+  pointer-events: none;
 }
 
 .home-cover-8__content {
@@ -1069,10 +1105,13 @@
 /* Responsive - Mobile */
 @media (max-width: 768px) {
   .home-cover-8 {
-    background-position: 85% 10%;
     min-height: 600px;
     align-items: flex-end;
     justify-content: flex-start;
+  }
+
+  .home-cover-8__bg {
+    object-position: 85% 10%;
   }
 
   .home-cover-8::before {

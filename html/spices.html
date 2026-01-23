@@ -31,6 +31,7 @@
   <section class="main-content spices-section">
     <div class="spices-headline">
       <div class="hero-banner spices__banner">
+        <img class="hero-banner__bg" src="../images/spices/spices-bg.jpg" alt="" data-parallax="0.3">
         <h2 class="hero-banner__title">Single Spice</h2>
         <p class="hero-banner__subtitle">單方香辛料</p>
       </div>
@@ -90,8 +91,9 @@
     fetch('../js/utils/swiper-init.js').then(response => response.text()),
     fetch('../js/products/swiper-config.js').then(response => response.text()),
     fetch('../js/spices/spice-list.js').then(response => response.text()),
+    fetch('../js/utils/parallax.js').then(response => response.text()),
   ])
-    .then(([headerHtml, footerHtml, headerJs, productRowJs, swiperInitJs, swiperConfigJs, spiceListJs]) => {
+    .then(([headerHtml, footerHtml, headerJs, productRowJs, swiperInitJs, swiperConfigJs, spiceListJs, parallaxJs]) => {
       // 1. 先插入 HTML
       document.getElementById('header').innerHTML = headerHtml;
       document.getElementById('footer').innerHTML = footerHtml;
@@ -116,7 +118,11 @@
       const spiceListFunc = new Function(spiceListJs);
       spiceListFunc();
 
-      console.log('✅ Products page loaded successfully!');
+      // 7. 初始化視差效果
+      const parallaxFunc = new Function(parallaxJs);
+      parallaxFunc();
+
+      console.log('✅ Spices page loaded successfully!');
     })
 </script>
 

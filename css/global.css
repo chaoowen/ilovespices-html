@@ -125,11 +125,8 @@ button:focus-visible {
   min-height: 480px;
   /* 設定最小高度，確保內容少時也有份量 */
   padding: 2rem 1rem;
-
-  /* 背景圖設定 (預設) */
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
+  overflow: hidden;
+  /* 防止視差圖片超出 */
 
   /* 文字設定 */
   color: #fff;
@@ -137,6 +134,23 @@ button:focus-visible {
 
   /* 確保內容在遮罩層之上 */
   z-index: 1;
+}
+
+/* 背景圖片 (用於視差效果) */
+.hero-banner__bg {
+  position: absolute;
+  top: -10%; /* 往上偏移，避免頂部空白 */
+  left: 0;
+  width: 100%;
+  height: 120%;
+  /* 額外高度供視差移動 */
+  object-fit: cover;
+  object-position: center;
+  z-index: -2;
+  /* 在遮罩層後面 */
+  will-change: transform;
+  /* GPU 加速 */
+  pointer-events: none;
 }
 
 /* 黑色半透明遮罩 (關鍵優化：增加文字可讀性) */

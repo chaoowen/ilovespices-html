@@ -16,11 +16,6 @@
   position: relative;
 }
 
-/* 上方 Banner 區域 */
-.spices__banner {
-  background-image: url('../../images/spices/spices-bg.jpg');
-}
-
 /* 下方列表區域 */
 .spices__container {
   width: 100%;

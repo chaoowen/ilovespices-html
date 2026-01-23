@@ -16,11 +16,6 @@
   position: relative;
 }
 
-/* 上方 Banner 區域 */
-.products__banner {
-  background-image: url('../../images/products/products-bg.jpg');
-}
-
 /* 下方列表區域 */
 .products__container {
   width: 100%;

@@ -4,12 +4,6 @@
 
 .recipes-section {}
 
-/* Banner */
-.recipes__banner {
-  background-image: url('../../images/recipes/recipes-bg.jpg');
-  background-position: center;
-}
-
 /* Filter Bar */
 .recipes__filter {
   padding-top: 40px;

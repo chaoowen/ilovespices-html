@@ -32,6 +32,7 @@
   <main class="main-content">
     <!-- cover1 -->
     <div class="home-cover-1">
+      <img class="home-cover-1__bg" src="../images/home/cover-1.png" alt="" data-parallax="0.3">
       <div class="home-cover-1__content">
         <img src="../images/icons/global.svg" alt="global">
         <p class="home-cover-1__title">Global Flavor Authority</p>
@@ -79,6 +80,7 @@
 
     <!-- cover4 - 熱門商品 -->
     <section class="home-cover-4">
+      <img class="home-cover-4__bg" src="../images/home/cover-4.jpg" alt="" data-parallax="0.3">
       <h2 class="home-cover-4__title">熱門商品</h2>
       <!-- 桌面/平板 Grid 版本 -->
       <div class="home-cover-4__grid">
@@ -195,6 +197,7 @@
 
     <!-- cover8 -- 黃金比例 -->
     <section class="home-cover-8">
+      <img class="home-cover-8__bg" src="../images/home/cover-7.png" alt="" data-parallax="0.3">
       <div class="home-cover-8__content">
         <p class="home-cover-8__subtitle">家用主打星：蒙特婁口味牛排粉</p>
         <h2 class="home-cover-8__title">不只是鹽與胡椒<br>而是黃金比例的魔法</h2>
@@ -223,9 +226,10 @@
     fetch('../js/home/recipes.js').then(response => response.text()),
     fetch('../js/home/home-cover-4.js').then(response => response.text()),
     fetch('../js/utils/swiper-init.js').then(response => response.text()),
-    fetch('../js/home/swiper-config.js').then(response => response.text())
+    fetch('../js/home/swiper-config.js').then(response => response.text()),
+    fetch('../js/utils/parallax.js').then(response => response.text()),
   ])
-    .then(([headerHtml, footerHtml, productsHtml, recipesHtml, headerJs, productsJs, homeCover3Js, recipesJs, homeCover4Js, swiperInitJs, swiperConfigJs]) => {
+    .then(([headerHtml, footerHtml, productsHtml, recipesHtml, headerJs, productsJs, homeCover3Js, recipesJs, homeCover4Js, swiperInitJs, swiperConfigJs, parallaxJs]) => {
       // 1. 先插入 HTML
       document.getElementById('header').innerHTML = headerHtml;
       document.getElementById('footer').innerHTML = footerHtml;
@@ -255,6 +259,10 @@
       // 2-4. 設定並初始化所有 Swiper
       const swiperConfigFunc = new Function(swiperConfigJs);
       swiperConfigFunc();
+
+      // 2-5. 初始化視差效果
+      const parallaxFunc = new Function(parallaxJs);
+      parallaxFunc();
 
       console.log('✅ All components loaded successfully!');
     })
