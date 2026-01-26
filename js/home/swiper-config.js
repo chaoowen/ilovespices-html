@@ -82,6 +82,7 @@
     centeredSlides: true,
     loop: true,
     speed: 500,
+    slidesPerGroup: 1, /* 確保一次只滑一張 */
 
     // 分頁指示器
     pagination: {
@@ -91,10 +92,9 @@
 
     // 響應式斷點設定
     breakpoints: {
-      640: {
-        slidesPerView: 2,
+      768: {
+        slidesPerView: 2.3,
         spaceBetween: 20,
-        centeredSlides: false,
       },
       1024: {
         slidesPerView: 3,

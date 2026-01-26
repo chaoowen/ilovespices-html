@@ -11,6 +11,7 @@ SwiperInit.create('recipes', '.recipes-swiper', {
   centeredSlides: true,
   loop: true,
   speed: 500,
+  slidesPerGroup: 1,
 
   // 分頁指示器 (桌機＆手機都有)
   pagination: {
@@ -25,8 +26,8 @@ SwiperInit.create('recipes', '.recipes-swiper', {
   },
 
   breakpoints: {
-    640: {
-      slidesPerView: 2,
+    768: {
+      slidesPerView: 2.3,
       spaceBetween: 20,
       centeredSlides: false,
     },

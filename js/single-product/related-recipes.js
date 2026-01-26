@@ -26,6 +26,21 @@
       image: '../images/home/recipe-1.jpg',
       name: '香煎檸檬雞排',
       time: '45 分鐘',
+    },
+    {
+      image: '../images/home/recipe-1.jpg',
+      name: '香煎檸檬雞排',
+      time: '45 分鐘',
+    },
+    {
+      image: '../images/home/recipe-2.jpg',
+      name: '普羅旺斯燉菜',
+      time: '1 小時 15 分鐘',
+    },
+    {
+      image: '../images/home/recipe-3.jpg',
+      name: '墨西哥辣味牛肉塔可',
+      time: '50 分鐘',
     }
   ];
 
