@@ -430,11 +430,14 @@
 
 .single-spice::before {
   content: '';
-  display: block;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
   max-width: 1280px;
   height: 1px;
   background-color: #ccc;
-  margin: 0 auto;
 }
 
 .single-spice--no-tabs .single-spice__tabs,

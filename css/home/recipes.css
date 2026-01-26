@@ -52,16 +52,12 @@
   flex-direction: column;
 }
 
-.recipe-card:nth-child(2n+1) {
+.swiper-slide:nth-child(odd) .recipe-card {
   background-color: #B4543A;
 }
 
-.recipe-card:nth-child(2n+2) {
+.swiper-slide:nth-child(even) .recipe-card {
   background-color: #E59D61;
-}
-
-.recipe-card:nth-child(2n+3) {
-  color: #B46F3A;
 }
 
 .recipe-card:hover {

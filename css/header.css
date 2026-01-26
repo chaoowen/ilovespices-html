@@ -121,26 +121,12 @@
    Responsive Design - Tablet (1024px)
    ======================================== */
 @media (max-width: 1024px) {
-  .header__logo img {
-    height: 80px;
-  }
-
-  .header__nav-link {
-    padding: 10px 20px;
-    font-size: 15px;
-  }
-}
-
-/* ========================================
-   Responsive Design - Mobile (768px)
-   ======================================== */
-@media (max-width: 768px) {
   .header__logo-section {
     text-align: start;
   }
 
   .header__logo img {
-    height: 60px;
+    height: 80px;
   }
 
   /* 顯示漢堡選單按鈕 */
@@ -182,6 +168,15 @@
   /* 隱藏分隔符號 */
   .header__nav-separator {
     display: none;
+  }
+}
+
+/* ========================================
+   Responsive Design - Mobile (768px)
+   ======================================== */
+@media (max-width: 768px) {
+  .header__logo img {
+    height: 60px;
   }
 }
 
