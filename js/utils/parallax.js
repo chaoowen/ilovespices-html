@@ -79,7 +79,6 @@ const Parallax = (function() {
    * 更新所有視差元素的位置
    */
   function updateParallax() {
-    const scrollY = window.scrollY;
     const windowHeight = window.innerHeight;
 
     elements.forEach(el => {
@@ -90,23 +89,19 @@ const Parallax = (function() {
 
       // 取得容器的位置資訊
       const rect = container.getBoundingClientRect();
+      const containerHeight = container.offsetHeight;
 
       // 只在元素可見時才計算
       if (rect.bottom < 0 || rect.top > windowHeight) return;
 
-      const containerTop = rect.top + scrollY;
-      const containerHeight = container.offsetHeight;
+      // 計算滾動進度：0 = 剛從底部進入, 1 = 完全離開頂部
+      const progress = (windowHeight - rect.top) / (windowHeight + containerHeight);
 
-      // 計算視差偏移量
-      // 當頁面滾動時，圖片以較慢的速度移動
-      const offset = (scrollY - containerTop + windowHeight * 0.5) * speed;
-
-      // 限制偏移範圍，避免圖片移動太多露出空白
-      const maxOffset = containerHeight * 0.3;
-      const clampedOffset = Math.max(-maxOffset, Math.min(maxOffset, offset));
+      // 將進度映射為偏移量（以 0.5 為中心點）
+      const offset = (progress - 0.5) * containerHeight * speed * 2;
 
       // 套用 transform
-      el.style.transform = `translateY(${clampedOffset}px)`;
+      el.style.transform = `translateY(${offset}px)`;
     });
   }
 
