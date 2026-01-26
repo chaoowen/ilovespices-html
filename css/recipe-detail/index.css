@@ -337,6 +337,67 @@
 
 
 /* ========================================
+   食譜搜尋 (Recipe Search Bar)
+   ======================================== */
+.recipe-search {
+  background-color: var(--secondary-color);
+  padding: 24px 0;
+}
+
+.recipe-search__container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.recipe-search__input {
+  flex: 1;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 6px;
+  font-size: 14px;
+  color: var(--text-dark);
+  background-color: #fff;
+  outline: none;
+}
+
+.recipe-search__input::placeholder {
+  color: #999;
+}
+
+.recipe-search__select {
+  flex: 1;
+  width: auto;
+}
+
+.recipe-search__select .form-select {
+  border: none;
+  padding: 12px 15px;
+  padding-right: 30px;
+}
+
+.recipe-search__btn {
+  padding: 12px 40px;
+  background-color: #fff;
+  border: none;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--secondary-color);
+  cursor: pointer;
+  transition: var(--transition);
+  white-space: nowrap;
+}
+
+.recipe-search__btn:hover {
+  background-color: #f0f0f0;
+}
+
+
+/* ========================================
    相關食譜 Section - Navigation Arrows
    桌機版才顯示，手機版隱藏
    ======================================== */
@@ -452,6 +513,22 @@
    Responsive - Mobile (768px)
    ======================================== */
 @media (max-width: 768px) {
+  .recipe-search__container {
+    flex-wrap: wrap;
+  }
+
+  .recipe-search__input {
+    flex: 1 1 100%;
+  }
+
+  .recipe-search__select {
+    flex: 1 1 calc(50% - 8px);
+  }
+
+  .recipe-search__btn {
+    flex: 1 1 100%;
+  }
+
   .recipe-hero__breadcrumb {
     font-size: 12px;
     margin-bottom: 16px;

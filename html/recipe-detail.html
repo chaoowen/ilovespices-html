@@ -29,7 +29,31 @@
 
   <main class="main-content recipe-detail-page">
 
-    <!-- Recipe Hero Section -->
+    <!-- Select Section - 食譜搜尋 -->
+    <section class="recipe-search">
+      <div class="recipe-search__container">
+        <input type="text" class="recipe-search__input" placeholder="輸入食譜關鍵字">
+        <div class="select-wrapper recipe-search__select">
+          <select class="form-select">
+            <option value="">產品系列</option>
+            <option value="seasoning">調味粉系列</option>
+            <option value="sauce">醬料系列</option>
+            <option value="spice">香辛料系列</option>
+          </select>
+          <span class="select-arrow"></span>
+        </div>
+        <div class="select-wrapper recipe-search__select">
+          <select class="form-select">
+            <option value="">全部系列</option>
+            <option value="western">西式料理</option>
+            <option value="asian">亞洲料理</option>
+            <option value="mexican">墨西哥料理</option>
+          </select>
+          <span class="select-arrow"></span>
+        </div>
+        <button type="button" class="recipe-search__btn">搜尋</button>
+      </div>
+    </section>
 
     <!-- Recipe Content Section -->
     <section class="recipe-content">
