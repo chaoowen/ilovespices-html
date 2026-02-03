@@ -1,0 +1,229 @@
+/* ========================================
+   FAQ Page Styles
+   ======================================== */
+
+.faq-section {
+  padding: 80px 20px;
+}
+
+/* Hero Banner - Image Position */
+.faq__banner .hero-banner__bg {
+  object-position: center 20%;
+}
+
+.faq__filter-wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.faq__filter-btn {
+  padding: 8px 50px;
+  border: 1px solid #ccc;
+  border-radius: 30px;
+  background-color: #fff;
+  font-size: 18px;
+  /* font-weight: 500; */
+  color: var(--text-dark);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.faq__filter-btn:hover {
+  border-color: var(--secondary-color);
+  color: var(--secondary-color);
+}
+
+.faq__filter-btn.active {
+  background-color: var(--secondary-color);
+  border-color: var(--secondary-color);
+  color: #fff;
+}
+
+/* FAQ List */
+.faq__list {
+  padding-top: 40px;
+}
+
+.faq__list-wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* FAQ Item */
+.faq__item {
+  padding: 20px 40px;
+  background-color: #f5f5f5;
+  border-radius: 8px;
+  margin-bottom: 16px;
+  overflow: hidden;
+}
+
+.faq__item-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  user-select: none;
+}
+
+.faq__item-question {
+  font-size: 18px;
+  font-weight: 500;
+  color: var(--text-dark);
+  margin: 0;
+  padding-right: 20px;
+  line-height: 1.5;
+}
+
+.faq__item-toggle {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: none;
+  background-color: #fff;
+  color: var(--text-dark);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  flex-shrink: 0;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+/* Toggle icons using mask-image */
+.faq__icon-minus,
+.faq__icon-plus {
+  width: 20px;
+  height: 20px;
+  background-color: #333;
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  -webkit-mask-position: center;
+  mask-position: center;
+  -webkit-mask-size: contain;
+  mask-size: contain;
+}
+
+.faq__icon-minus {
+  display: none;
+  -webkit-mask-image: url('../../images/icons/minus.svg');
+  mask-image: url('../../images/icons/minus.svg');
+}
+
+.faq__icon-plus {
+  display: block;
+  -webkit-mask-image: url('../../images/icons/chevron-down.svg');
+  mask-image: url('../../images/icons/chevron-down.svg');
+}
+
+.faq__item.active .faq__icon-minus {
+  display: block;
+}
+
+.faq__item.active .faq__icon-plus {
+  display: none;
+}
+
+/* FAQ Content - Using grid for smooth animation */
+.faq__item-content {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 0.3s ease-out;
+}
+
+.faq__item.active .faq__item-content {
+  grid-template-rows: 1fr;
+}
+
+.faq__item-content-inner {
+  overflow: hidden;
+}
+
+.faq__item-content p {
+  margin: 0;
+  padding-top: 8px;
+  color: var(--text-dark);
+}
+
+/* Load More */
+.faq__more {
+  text-align: center;
+  margin-top: 40px;
+}
+
+.faq__load-btn {
+  width: 200px;
+  display: inline-block;
+  padding: 16px 0;
+  text-align: center;
+  background-color: #fff;
+  border: 1px solid var(--secondary-color);
+  border-radius: 4px;
+  color: var(--secondary-color);
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.faq__load-btn:hover {
+  background-color: var(--secondary-color);
+  color: #fff;
+}
+
+/* Hidden items for filter */
+.faq__item.hidden {
+  display: none;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .faq-section {
+    padding: 40px 20px;
+  }
+
+  .faq__filter-btn {
+    padding: 8px 20px;
+    text-align: center;
+    font-size: 16px;
+  }
+
+  .faq__list {
+    padding-top: 20px;
+  }
+
+  .faq__item {
+    padding: 20px;
+  }
+
+  .faq__item-question {
+    font-size: 16px;
+    padding-right: 16px;
+  }
+
+  .faq__item-toggle {
+    width: 36px;
+    height: 36px;
+  }
+
+  .faq__icon-minus,
+  .faq__icon-plus {
+    width: 18px;
+    height: 18px;
+  }
+
+  .faq__item-content p {
+    font-size: 14px;
+  }
+
+  /* Load More */
+  .faq__more {
+    margin-top: 20px;
+  }
+
+  .faq__load-btn {
+    width: 100%;
+  }
+}
