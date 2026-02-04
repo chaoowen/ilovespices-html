@@ -6,12 +6,10 @@ mobileToggle.addEventListener('click', function () {
 
   // Toggle menu
   mainNav.classList.toggle('active');
+  this.classList.toggle('active');
 
   // Update ARIA attributes
   this.setAttribute('aria-expanded', !isExpanded);
-
-  // Change icon
-  this.textContent = isExpanded ? '☰' : '✕';
 });
 
 // Active Navigation Link
@@ -61,8 +59,8 @@ document.addEventListener('click', function (event) {
 
   if (!isClickInsideNav && !isClickOnToggle && mainNav.classList.contains('active')) {
     mainNav.classList.remove('active');
+    mobileToggle.classList.remove('active');
     mobileToggle.setAttribute('aria-expanded', 'false');
-    mobileToggle.textContent = '☰';
   }
 });
 

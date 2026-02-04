@@ -9,16 +9,16 @@
 }
 
 .header__container {
-  max-width: 1400px;
   margin: 0 auto;
   padding: 0 20px;
+  border-bottom: 4px solid var(--secondary-color);
 }
 
 /* ========================================
    Logo Section
    ======================================== */
 .header__logo-section {
-  padding-top: 16px;
+  padding-top: 12px;
   text-align: center;
   position: relative;
 }
@@ -33,8 +33,8 @@
 }
 
 .header__logo img {
-  height: 100px;
-  width: auto;
+  width: 100px;
+  height: auto;
 }
 
 /* ========================================
@@ -55,46 +55,21 @@
 .header__nav-link {
   display: block;
   padding: 12px 25px;
-  font-size: 16px;
-  font-weight: 500;
+  font-size: 14px;
   color: var(--text-dark);
   position: relative;
   transition: var(--transition);
 }
 
-/* Hover 底線動畫效果 */
-.header__nav-link::after {
-  content: '';
-  position: absolute;
-  bottom: 8px;
-  left: 50%;
-  width: 0;
-  height: 2px;
-  background: var(--secondary-color);
-  transition: all 0.3s ease;
-  transform: translateX(-50%);
-}
-
-.header__nav-link:hover {
-  color: var(--primary-color);
-}
-
-.header__nav-link:hover::after {
-  width: 60%;
-}
-
 /* Active 狀態 */
 .header__nav-link.active {
-  color: var(--primary-color);
-}
-
-.header__nav-link.active::after {
-  width: 60%;
+  color: var(--secondary-color);
+  font-weight: 700;
 }
 
 /* Navigation Separator */
 .header__nav-separator {
-  color: var(--border-color);
+  color: #333;
   font-weight: 300;
   user-select: none;
 }
@@ -106,15 +81,50 @@
   display: none;
   background: none;
   border: none;
-  font-size: 28px;
   cursor: pointer;
-  padding: 10px;
-  color: var(--text-dark);
   position: absolute;
   right: 0;
   top: 50%;
   transform: translateY(-50%);
   z-index: 1001;
+  width: 24px;
+  height: 24px;
+  padding: 0;
+}
+
+/* Toggle icons using mask-image */
+.header__toggle-menu,
+.header__toggle-close {
+  display: block;
+  width: 100%;
+  height: 100%;
+  background-color: var(--text-dark);
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  -webkit-mask-position: center;
+  mask-position: center;
+  -webkit-mask-size: contain;
+  mask-size: contain;
+}
+
+.header__toggle-menu {
+  -webkit-mask-image: url('../images/icons/menu.svg');
+  mask-image: url('../images/icons/menu.svg');
+}
+
+.header__toggle-close {
+  display: none;
+  -webkit-mask-image: url('../images/icons/close.svg');
+  mask-image: url('../images/icons/close.svg');
+}
+
+/* Active state - show close, hide menu */
+.header__mobile-toggle.active .header__toggle-menu {
+  display: none;
+}
+
+.header__mobile-toggle.active .header__toggle-close {
+  display: block;
 }
 
 /* ========================================
@@ -122,11 +132,13 @@
    ======================================== */
 @media (max-width: 1024px) {
   .header__logo-section {
-    text-align: start;
+    padding-bottom: 12px;
+    display: flex;
+    align-items: center;
   }
 
   .header__logo img {
-    height: 80px;
+    width: 80px;
   }
 
   /* 顯示漢堡選單按鈕 */
@@ -176,7 +188,7 @@
    ======================================== */
 @media (max-width: 768px) {
   .header__logo img {
-    height: 60px;
+    width: 55px;
   }
 }
 
