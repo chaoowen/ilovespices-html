@@ -43,7 +43,7 @@
   transform: translate(-50%, -100%);
   display: inline-flex;
   justify-content: center;
-  gap: 40px;
+  gap: 10px;
   z-index: 30;
 }
 
@@ -51,11 +51,11 @@
   width: 180px;
   padding: 12px 0;
   background: #fff;
-  border-radius: 20px 20px 0 0;
+  border-radius: 10px 10px 0 0;
   font-size: 18px;
   border: none;
   font-weight: 700;
-  color: var(--secondary-color);
+  color: #333;
   cursor: pointer;
   transition: all 0.3s ease;
   opacity: 0.8;
@@ -67,6 +67,7 @@
 
 .single-spice__tab.active {
   opacity: 1;
+  color: var(--secondary-color);
 }
 
 /* ========================================
@@ -223,20 +224,24 @@
 
 .swiper-button-prev::after,
 .swiper-button-next::after {
-  font-size: 20px;
-  font-weight: 700;
-  color: var(--secondary-color);
+  content: '';
+  display: block;
+  width: 32px;
+  height: 32px;
+  background-color: #333;
+  -webkit-mask-image: url('../../images/icons/swiper-arrow.svg');
+  mask-image: url('../../images/icons/swiper-arrow.svg');
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  -webkit-mask-position: center;
+  mask-position: center;
+  -webkit-mask-size: contain;
+  mask-size: contain;
+  transition: background-color 0.3s ease;
 }
 
-.swiper-button-prev:hover,
-.swiper-button-next:hover {
-  background: var(--secondary-color);
-  transform: scale(1.1);
-}
-
-.swiper-button-prev:hover::after,
-.swiper-button-next:hover::after {
-  color: #ffffff;
+.swiper-button-next::after {
+  transform: rotate(180deg);
 }
 
 /* 調整箭頭位置 - 內推 20px */
@@ -324,7 +329,9 @@
   }
 
   .single-spice__tabs {
-    gap: 12px;
+    width: 100%;
+    gap: 6px;
+    flex-wrap: wrap;
   }
 
   .single-spice__tab {
@@ -374,7 +381,8 @@
 
   .swiper-button-prev::after,
   .swiper-button-next::after {
-    font-size: 16px;
+    width: 20px;
+    height: 20px;
   }
 }
 
@@ -382,12 +390,6 @@
    Responsive Design - Small Mobile (480px)
    ======================================== */
 @media (max-width: 480px) {
-  .single-spice__tabs {
-    width: 100%;
-    gap: 0;
-    flex-wrap: wrap;
-  }
-
   .single-spice__title {
     font-size: 32px;
   }

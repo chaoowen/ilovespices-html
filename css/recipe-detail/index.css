@@ -437,18 +437,24 @@
 
 .recipe-detail-page .recipes__nav-prev::after,
 .recipe-detail-page .recipes__nav-next::after {
-  font-family: swiper-icons;
-  font-size: 16px;
-  font-weight: 700;
-  color: var(--secondary-color);
-}
-
-.recipe-detail-page .recipes__nav-prev::after {
-  content: 'prev';
+  content: '';
+  display: block;
+  width: 32px;
+  height: 32px;
+  background-color: var(--secondary-color);
+  -webkit-mask-image: url('../../images/icons/swiper-arrow.svg');
+  mask-image: url('../../images/icons/swiper-arrow.svg');
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  -webkit-mask-position: center;
+  mask-position: center;
+  -webkit-mask-size: contain;
+  mask-size: contain;
+  transition: background-color 0.3s ease;
 }
 
 .recipe-detail-page .recipes__nav-next::after {
-  content: 'next';
+  transform: rotate(180deg);
 }
 
 /* 桌機版需要 padding 給 nav arrows 空間 */

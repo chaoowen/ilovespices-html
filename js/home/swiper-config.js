@@ -63,11 +63,11 @@
         spaceBetween: 16,
         centeredSlides: false,
       },
-      1024: {
-        slidesPerView: 5,
-        spaceBetween: 16,
-        centeredSlides: false,
-      },
+      // 1024: {
+      //   slidesPerView: 5,
+      //   spaceBetween: 16,
+      //   centeredSlides: false,
+      // },
     },
   });
 

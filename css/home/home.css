@@ -5,17 +5,21 @@
   width: 100%;
   height: 680px;
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: center;
+  padding-top: 250px;
+  padding-bottom: 150px;
   position: relative;
   z-index: 1;
-  overflow: hidden; /* 視差效果必須 */
+  overflow: hidden;
+  /* 視差效果必須 */
 }
 
 /* 背景圖（視差效果） */
 .home-cover-1__bg {
   position: absolute;
-  top: -10%; /* 往上偏移，避免頂部空白 */
+  top: -10%;
+  /* 往上偏移，避免頂部空白 */
   left: 0;
   width: 100%;
   height: 120%;
@@ -36,39 +40,45 @@
 .home-cover-1__content img {
   width: 100px;
   height: auto;
-  margin-bottom: 20px;
 }
 
 .home-cover-1__title {
   font-size: 80px;
-  font-weight: 600;
-  margin-bottom: 10px;
-  letter-spacing: -2%;
+  font-weight: 500;
+  line-height: 120%;
+  letter-spacing: -0.05rem;
   text-align: center;
 }
 
 .home-cover-1__text {
   font-size: 24px;
   font-weight: 500;
-  letter-spacing: -2%;
+  letter-spacing: -0.05rem;
+}
+
+@media (max-width: 1024px) {
+  .home-cover-1__title {
+    margin-bottom: 10px;
+    font-size: 48px;
+  }
 }
 
 
 @media (max-width: 768px) {
   .home-cover-1 {
-    height: 400px;
+    height: 640px;
+    align-items: center;
+    padding-top: 0;
+    padding-bottom: 0;
   }
 
   .home-cover-1__content img {
-    width: 40px;
-  }
-
-  .home-cover-1__title {
-    font-size: 28px;
+    width: 200px;
+    margin-bottom: 40px;
   }
 
   .home-cover-1__text {
-    font-size: 14px;
+    font-size: 16px;
   }
 }
 
@@ -82,7 +92,7 @@
   position: relative;
   overflow: hidden;
   background-color: #000000;
-  min-height: 500px;
+  height: 676px;
 }
 
 .home-cover-2__bg {
@@ -92,7 +102,7 @@
   width: 50%;
   height: 120%;
   object-fit: cover;
-  object-position: center 20%;
+  object-position: 30% bottom;
   will-change: transform;
   pointer-events: none;
 }
@@ -116,8 +126,8 @@
 }
 
 .home-cover-2__subtitle {
-  font-size: 20px;
-  font-weight: 500;
+  font-size: 24px;
+  font-weight: 400;
   margin-bottom: 20px;
   color: #fff;
 }
@@ -136,32 +146,20 @@
 
 /* Responsive - Tablet */
 @media (max-width: 1024px) {
-  .home-cover-2 {
-    min-height: 400px;
-  }
-
   .home-cover-2__content {
     padding: 40px;
-  }
-
-  .home-cover-2__title {
-    font-size: 36px;
-  }
-
-  .home-cover-2__subtitle {
-    font-size: 16px;
   }
 }
 
 /* Responsive - Mobile */
 @media (max-width: 768px) {
   .home-cover-2 {
-    min-height: 400px;
+    min-height: 600px;
   }
 
   .home-cover-2__bg {
     width: 100%;
-    object-position: center;
+    object-position: 36% center;
   }
 
   .home-cover-2__image {
@@ -179,12 +177,17 @@
   }
 
   .home-cover-2__title {
-    font-size: 28px;
+    margin-bottom: 8px;
+    font-size: 40px;
+    text-align: center;
   }
 
   .home-cover-2__subtitle {
-    font-size: 14px;
-    margin-bottom: 16px;
+    text-align: center;
+  }
+
+  .home-cover-2__btn {
+    width: 100%;
   }
 }
 
@@ -332,18 +335,24 @@
 
   .home-cover-3__nav-prev::after,
   .home-cover-3__nav-next::after {
-    font-family: swiper-icons;
-    font-size: 16px;
-    font-weight: 700;
-    color: var(--secondary-color);
-  }
-
-  .home-cover-3__nav-prev::after {
-    content: 'prev';
+    content: '';
+    display: block;
+    width: 32px;
+    height: 32px;
+    background-color: var(--secondary-color);
+    -webkit-mask-image: url('../../images/icons/swiper-arrow.svg');
+    mask-image: url('../../images/icons/swiper-arrow.svg');
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+    -webkit-mask-position: center;
+    mask-position: center;
+    -webkit-mask-size: contain;
+    mask-size: contain;
+    transition: background-color 0.3s ease;
   }
 
   .home-cover-3__nav-next::after {
-    content: 'next';
+    transform: rotate(180deg);
   }
 }
 
@@ -403,18 +412,24 @@
 
   .home-cover-3__nav-prev::after,
   .home-cover-3__nav-next::after {
-    font-family: swiper-icons;
-    font-size: 14px;
-    font-weight: 700;
-    color: var(--secondary-color);
-  }
-
-  .home-cover-3__nav-prev::after {
-    content: 'prev';
+    content: '';
+    display: block;
+    width: 32px;
+    height: 32px;
+    background-color: #333;
+    -webkit-mask-image: url('../../images/icons/swiper-arrow.svg');
+    mask-image: url('../../images/icons/swiper-arrow.svg');
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+    -webkit-mask-position: center;
+    mask-position: center;
+    -webkit-mask-size: contain;
+    mask-size: contain;
+    transition: background-color 0.3s ease;
   }
 
   .home-cover-3__nav-next::after {
-    content: 'next';
+    transform: rotate(180deg);
   }
 }
 
@@ -424,13 +439,15 @@
 .home-cover-4 {
   padding: 80px 20px;
   position: relative;
-  overflow: hidden; /* 視差效果必須 */
+  overflow: hidden;
+  /* 視差效果必須 */
 }
 
 /* 背景圖（視差效果） */
 .home-cover-4__bg {
   position: absolute;
-  top: -10%; /* 往上偏移，避免頂部空白 */
+  top: -10%;
+  /* 往上偏移，避免頂部空白 */
   left: 0;
   width: 100%;
   height: 120%;
@@ -508,7 +525,7 @@
 
 .home-cover-4__card-name {
   font-size: 16px;
-  font-weight: 700;
+  font-weight: 500;
   color: #fff;
   margin-bottom: 4px;
   line-height: 1.4;
@@ -516,7 +533,7 @@
 
 .home-cover-4__card-name-en {
   font-size: 10px;
-  font-weight: 700;
+  font-weight: 500;
   color: #fff;
 }
 
@@ -576,18 +593,24 @@
 
   .home-cover-4__nav-prev::after,
   .home-cover-4__nav-next::after {
-    font-family: swiper-icons;
-    font-size: 16px;
-    font-weight: 700;
-    color: var(--secondary-color);
-  }
-
-  .home-cover-4__nav-prev::after {
-    content: 'prev';
+    content: '';
+    display: block;
+    width: 32px;
+    height: 32px;
+    background-color: #333;
+    -webkit-mask-image: url('../../images/icons/swiper-arrow.svg');
+    mask-image: url('../../images/icons/swiper-arrow.svg');
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+    -webkit-mask-position: center;
+    mask-position: center;
+    -webkit-mask-size: contain;
+    mask-size: contain;
+    transition: background-color 0.3s ease;
   }
 
   .home-cover-4__nav-next::after {
-    content: 'next';
+    transform: rotate(180deg);
   }
 }
 
@@ -607,10 +630,6 @@
     padding: 0;
   }
 
-  .home-cover-4__card-name {
-    font-size: 12px;
-  }
-
   .home-cover-4__card-name-en {
     font-size: 10px;
   }
@@ -627,11 +646,6 @@
 
   .home-cover-4__nav-next {
     right: 4px;
-  }
-
-  .home-cover-4__nav-prev::after,
-  .home-cover-4__nav-next::after {
-    font-size: 14px;
   }
 }
 
@@ -1040,13 +1054,15 @@
   min-height: 680px;
   display: flex;
   align-items: center;
-  overflow: hidden; /* 視差效果必須 */
+  overflow: hidden;
+  /* 視差效果必須 */
 }
 
 /* 背景圖（視差效果） */
 .home-cover-8__bg {
   position: absolute;
-  top: -10%; /* 往上偏移，避免頂部空白 */
+  top: -10%;
+  /* 往上偏移，避免頂部空白 */
   left: 0;
   width: 100%;
   height: 120%;

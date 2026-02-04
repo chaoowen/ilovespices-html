@@ -241,6 +241,9 @@
   /* Swiper 導航按鈕 */
   .products__nav-prev,
   .products__nav-next {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     position: absolute;
     top: 50%;
     transform: translateY(-100%);
@@ -264,21 +267,23 @@
   .products__nav-prev::after,
   .products__nav-next::after {
     content: '';
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 10px;
-    height: 10px;
-    border-top: 2px solid #333;
-    border-right: 2px solid #333;
-  }
-
-  .products__nav-prev::after {
-    transform: translate(-30%, -50%) rotate(-135deg);
+    display: block;
+    width: 32px;
+    height: 32px;
+    background-color: #333;
+    -webkit-mask-image: url('../../images/icons/swiper-arrow.svg');
+    mask-image: url('../../images/icons/swiper-arrow.svg');
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+    -webkit-mask-position: center;
+    mask-position: center;
+    -webkit-mask-size: contain;
+    mask-size: contain;
+    transition: background-color 0.3s ease;
   }
 
   .products__nav-next::after {
-    transform: translate(-70%, -50%) rotate(45deg);
+    transform: rotate(180deg);
   }
 
   .products__nav-prev.swiper-button-disabled,
