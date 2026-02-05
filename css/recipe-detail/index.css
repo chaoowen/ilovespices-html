@@ -235,7 +235,7 @@
   bottom: calc(-50% - 10px);
   /* 延伸到下一個數字頂部 */
   width: 2px;
-  background-color: #E8A857;
+  background-color: var(--secondary-color);
 }
 
 /* 最後一個 item 不需要線條 */
@@ -246,14 +246,15 @@
 .recipe-steps__number {
   width: 20px;
   height: 20px;
-  background-color: #E8A857;
+  border: 2px solid var(--secondary-color);
+  background-color: #fff;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
   font-size: 14px;
   font-weight: 700;
-  color: #fff;
+  color: var(--secondary-color);
   flex-shrink: 0;
   position: relative;
   z-index: 1;

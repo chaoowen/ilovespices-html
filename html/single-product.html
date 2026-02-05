@@ -90,6 +90,22 @@
 
           <!-- Channel Selection -->
           <div class="product-detail__channels">
+            <!-- 檢驗報告 -->
+            <div class="product-detail__channel">
+              <span class="product-detail__channel-label">檢驗報告</span>
+              <div class="product-detail__channel-select">
+                <div class="select-wrapper">
+                  <select class="form-select">
+                    <option value="">請選擇</option>
+                    <option value="carrefour">Ａ</option>
+                    <option value="pxmart">Ｂ</option>
+                    <option value="costco">Ｃ</option>
+                  </select>
+                  <div class="select-arrow"></div>
+                </div>
+                <button type="button" class="product-detail__channel-btn">前往</button>
+              </div>
+            </div>
             <!-- 實體通路 -->
             <div class="product-detail__channel">
               <span class="product-detail__channel-label">實體通路</span>
@@ -126,12 +142,12 @@
 
           <!-- CTA Buttons -->
           <div class="product-detail__cta">
-            <a href="#" class="product-detail__cta-btn product-detail__cta-btn--primary">
+            <a href="#" class="product-detail__cta-btn">
               <img src="../images/icons/business.svg" alt="">
               <span>業務洽談</span>
             </a>
-            <a href="#" class="product-detail__cta-btn product-detail__cta-btn--secondary">
-              <img src="../images/icons/support.svg" alt="">
+            <a href="#" class="product-detail__cta-btn">
+              <img src="../images/icons/customer.svg" alt="">
               <span>聯繫客服</span>
             </a>
           </div>
@@ -152,7 +168,7 @@
             </div>
 
             <!-- Pagination Dots -->
-            <div class="swiper-pagination recipes-pagination"></div>
+            <div class="swiper-pagination recipes-pagination common-pagination"></div>
           </div>
           <!-- Navigation Arrows (Desktop Only) -->
           <div class="recipes__nav-prev"></div>
@@ -182,7 +198,7 @@
             <div class="swiper-button-next"></div>
 
             <!-- Pagination Dots -->
-            <div class="swiper-pagination"></div>
+            <div class="swiper-pagination common-pagination"></div>
           </div>
         </div>
 

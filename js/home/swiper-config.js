@@ -13,7 +13,7 @@
   SwiperInit.create('products', '.single-spice-swiper', {
     // 基本設定 - 手機版
     slidesPerView: 2,
-    spaceBetween: 12,
+    spaceBetween: 24,
     centeredSlides: true,
     loop: true,
 
@@ -60,14 +60,14 @@
     breakpoints: {
       768: {
         slidesPerView: 4,
-        spaceBetween: 16,
+        spaceBetween: 30,
         centeredSlides: false,
       },
-      // 1024: {
-      //   slidesPerView: 5,
-      //   spaceBetween: 16,
-      //   centeredSlides: false,
-      // },
+      1024: {
+        slidesPerView: 4,
+        spaceBetween: 48,
+        centeredSlides: false,
+      },
     },
   });
 
@@ -116,9 +116,9 @@
     slidesOffsetBefore: 20,
     slidesOffsetAfter: 20,
 
-    navigation: {
-      nextEl: '.home-cover-3__nav-next',
-      prevEl: '.home-cover-3__nav-prev',
+    pagination: {
+      el: '.home-cover-3__pagination',
+      clickable: true,
     },
 
     breakpoints: {
@@ -131,28 +131,29 @@
 
 
   /**
-   * Cover 4 Swiper（熱門商品輪播）
-   * 響應式：1024px 以下才啟用
+   * Cover 5 Swiper（餐飲服務輪播）
+   * 響應式：768px 以下才啟用
    */
-  SwiperInit.createResponsive('cover4', '.home-cover-4-swiper', {
-    slidesPerView: 1.5,
-    spaceBetween: 16,
-    centeredSlides: false,
-    slidesOffsetBefore: 40,
-    slidesOffsetAfter: 40,
+  SwiperInit.createResponsive('cover5', '.home-cover-5-swiper', {
+    slidesPerView: 1.7,
+    spaceBetween: 20,
+    centeredSlides: true,
+    loop: false,
+    speed: 500,
+    initialSlide: 1,
 
-    navigation: {
-      nextEl: '.home-cover-4__nav-next',
-      prevEl: '.home-cover-4__nav-prev',
+    pagination: {
+      el: '.home-cover-5__pagination',
+      clickable: true,
     },
 
     breakpoints: {
-      769: {
-        slidesPerView: 2.5,
+      480: {
+        slidesPerView: 2.3,
         spaceBetween: 20,
       },
     },
-  }, 1024);
+  }, 768);
 
 
   /**

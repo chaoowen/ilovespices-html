@@ -6,7 +6,7 @@
 }
 
 .footer__container {
-  max-width: 1400px;
+  max-width: 1200px;
   margin: 0 auto;
   padding: 0 20px;
 }
@@ -79,7 +79,7 @@
 .footer__links {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 40px;
+  gap: 28px;
 }
 
 .footer__column {
@@ -141,8 +141,10 @@
   }
 
   .footer__links {
+    grid-auto-flow: column;
+    grid-template-rows: repeat(2, 1fr);
     grid-template-columns: repeat(2, 1fr);
-    gap: 30px;
+    gap: 40px;
   }
 }
 
@@ -158,11 +160,6 @@
 
   .footer__company {
     max-width: 100%;
-  }
-
-  .footer__links {
-    grid-template-columns: 1fr;
-    gap: 30px;
   }
 }
 

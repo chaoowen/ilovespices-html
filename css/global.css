@@ -78,7 +78,7 @@ button:focus-visible {
 .page-title::after {
   content: '';
   display: block;
-  margin: 0 auto;
+  margin: 4px auto 0;
   width: 60px;
   height: 3px;
   background-color: var(--secondary-color);
@@ -87,7 +87,7 @@ button:focus-visible {
 .btn {
   display: block;
   width: 200px;
-  height: 40px;
+  height: 52px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -98,6 +98,27 @@ button:focus-visible {
   text-decoration: none;
   text-align: center;
   transition: var(--transition);
+}
+
+/* ========================================
+   Common Swiper Pagination
+   ======================================== */
+.common-pagination {
+  position: relative;
+  margin-top: 30px;
+}
+
+.common-pagination .swiper-pagination-bullet {
+  width: 10px;
+  height: 10px;
+  background: #ccc;
+  opacity: 1;
+  transition: all 0.3s ease;
+}
+
+.common-pagination .swiper-pagination-bullet-active {
+  background: #333;
+  width: 10px;
 }
 
 @media screen and (max-width: 1024px) {

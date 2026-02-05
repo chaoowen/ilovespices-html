@@ -58,7 +58,7 @@
 
     <!-- cover3 -->
     <section class="home-cover-3">
-      <h2 class="home-cover-3__title">今天，你想來點什麼？</h2>
+      <h2 class="page-title home-cover-3__title">今天，你想來點什麼？</h2>
       <!-- 桌面/平板 Grid 版本 -->
       <div class="home-cover-3__grid">
         <!-- 卡片由 JS 動態生成 -->
@@ -69,9 +69,8 @@
           <div class="swiper-wrapper home-cover-3__swiper-content">
             <!-- 卡片由 JS 動態生成 -->
           </div>
+          <div class="swiper-pagination home-cover-3__pagination common-pagination"></div>
         </div>
-        <div class="home-cover-3__nav-prev"></div>
-        <div class="home-cover-3__nav-next"></div>
       </div>
     </section>
 
@@ -82,25 +81,15 @@
     <section class="home-cover-4">
       <img class="home-cover-4__bg" src="../images/home/cover-4.jpg" alt="" data-parallax="0.3">
       <h2 class="home-cover-4__title">熱門商品</h2>
-      <!-- 桌面/平板 Grid 版本 -->
       <div class="home-cover-4__grid">
         <!-- 卡片由 JS 動態生成 -->
-      </div>
-      <!-- 手機 Swiper 版本 -->
-      <div class="home-cover-4__carousel">
-        <div class="swiper home-cover-4-swiper">
-          <div class="swiper-wrapper home-cover-4__swiper-content">
-            <!-- 卡片由 JS 動態生成 -->
-          </div>
-        </div>
-        <div class="home-cover-4__nav-prev"></div>
-        <div class="home-cover-4__nav-next"></div>
       </div>
     </section>
 
     <!-- cover5 -- 餐飲服務 -->
     <section class="home-cover-5">
-      <h2 class="home-cover-5__title">餐飲服務</h2>
+      <h2 class="page-title home-cover-5__title">餐飲服務</h2>
+      <!-- 桌面版 Grid -->
       <div class="home-cover-5__grid">
         <div class="home-cover-5__card">
           <div class="home-cover-5__card-image">
@@ -124,12 +113,41 @@
           <p class="home-cover-5__card-name-en">Italian Seasoning</p>
         </div>
       </div>
+      <!-- 手機版 Swiper -->
+      <div class="home-cover-5__carousel">
+        <div class="swiper home-cover-5-swiper">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide home-cover-5__card">
+              <div class="home-cover-5__card-image">
+                <img src="../images/home/service-1.png" alt="袋裝香辛料">
+              </div>
+              <p class="home-cover-5__card-name">袋裝香辛料</p>
+              <p class="home-cover-5__card-name-en">Italian Seasoning</p>
+            </div>
+            <div class="swiper-slide home-cover-5__card">
+              <div class="home-cover-5__card-image">
+                <img src="../images/home/service-2.png" alt="罐裝香辛料">
+              </div>
+              <p class="home-cover-5__card-name">罐裝香辛料</p>
+              <p class="home-cover-5__card-name-en">Italian Seasoning</p>
+            </div>
+            <div class="swiper-slide home-cover-5__card">
+              <div class="home-cover-5__card-image">
+                <img src="../images/home/service-3.png" alt="醬料">
+              </div>
+              <p class="home-cover-5__card-name">醬料</p>
+              <p class="home-cover-5__card-name-en">Italian Seasoning</p>
+            </div>
+          </div>
+          <div class="swiper-pagination home-cover-5__pagination common-pagination"></div>
+        </div>
+      </div>
       <a href="#" class="btn home-cover-5__btn">更多</a>
     </section>
 
     <!-- cover6 -- 用味好美 -->
     <section class="home-cover-6">
-      <h2 class="home-cover-6__title">用味好美</h2>
+      <h2 class="page-title home-cover-6__title">用味好美</h2>
       <p class="home-cover-6__subtitle">為世界各地的人們提供美味、健康和可持續的食品體驗</p>
       <div class="home-cover-6__content">
         <div class="home-cover-6__plate">
