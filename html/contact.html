@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>聯繫我們 - Contact</title>
+  <link rel="icon" type="image/png" href="../images/logo.png">
+
+  <!-- Antonio 字體 -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Antonio:wght@100..700&display=swap" rel="stylesheet">
+
+  <!-- External CSS -->
+  <link rel="stylesheet" href="../css/global.css">
+  <link rel="stylesheet" href="../css/header.css">
+  <link rel="stylesheet" href="../css/footer.css">
+  <link rel="stylesheet" href="../css/contact/index.css">
+</head>
+
+<body>
+  <!-- header -->
+  <div id="header"></div>
+
+  <main class="main-content">
+    <!-- Contact Container -->
+    <div class="contact-section">
+      <!-- Background Image -->
+      <div class="contact__bg">
+        <img src="../images/contact/contact-bg.jpg" alt="" data-parallax="0.3">
+      </div>
+
+      <div class="contact__wrapper">
+        <!-- Left: Info -->
+        <div class="contact__info">
+          <h1 class="hero-banner__title contact__title">CONTACT</h1>
+          <p class="contact__subtitle">聯繫我們</p>
+
+          <div class="contact__desc">
+            <p>若您對我們的產品或服務上有其他疑問，建議可先至常見問題尋找答案。若還是沒有找到您需要的資訊，請填寫聯繫表格，我們將盡快回覆您，同時也歡迎任何產品及異業合作，謝謝！</p>
+          </div>
+
+          <div class="contact__details">
+            <p><span>總公司：</span>新北市中和區中正路801號4樓</p>
+            <p><span>客服專線：</span>02 - 8941 413</p>
+            <p><span>業務專線：</span>02 - 8941 413</p>
+            <p>mccormick.taiwan@gmail.com</p>
+          </div>
+        </div>
+
+        <!-- Right: Form -->
+        <div class="contact__form-container">
+          <form class="contact__form" id="contactForm">
+            <div class="contact__form-group">
+              <label for="name">姓名 / 稱呼</label>
+              <input type="text" id="name" name="name" required>
+            </div>
+
+            <div class="contact__form-group">
+              <label for="email">E-Mail</label>
+              <input type="email" id="email" name="email" required>
+            </div>
+
+            <div class="contact__form-group">
+              <label for="phone">電話</label>
+              <input type="tel" id="phone" name="phone">
+            </div>
+
+            <div class="contact__form-group">
+              <label for="category">請選擇問題類型</label>
+              <select id="category" name="category" required>
+                <option value=""></option>
+                <option value="product">產品相關</option>
+                <option value="purchase">購買通路</option>
+                <option value="business">業務合作</option>
+                <option value="other">其他問題</option>
+              </select>
+            </div>
+
+            <div class="contact__form-group contact__form-group--textarea">
+              <label for="message">請描述問題，我們會盡快協助處理！</label>
+              <textarea id="message" name="message" rows="4" required></textarea>
+            </div>
+
+            <div class="contact__form-submit">
+              <button type="submit" class="contact__submit-btn">送出</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- footer -->
+  <div id="footer"></div>
+
+  <script>
+    Promise.all([
+      // HTML 模板
+      fetch('./layout/header.html').then(response => response.text()),
+      fetch('./layout/footer.html').then(response => response.text()),
+      // JavaScript 檔案
+      fetch('../js/header.js').then(response => response.text()),
+      fetch('../js/utils/parallax.js').then(response => response.text()),
+    ])
+      .then(([headerHtml, footerHtml, headerJs, parallaxJs]) => {
+        // 1. 插入 HTML
+        document.getElementById('header').innerHTML = headerHtml;
+        document.getElementById('footer').innerHTML = footerHtml;
+
+        // 2. 執行 JavaScript
+        const headerFunc = new Function(headerJs);
+        headerFunc();
+
+        // 3. 初始化視差效果
+        const parallaxFunc = new Function(parallaxJs);
+        parallaxFunc();
+
+        // 4. 表單送出處理
+        const form = document.getElementById('contactForm');
+        form.addEventListener('submit', function (e) {
+          e.preventDefault();
+          alert('感謝您的來信，我們將盡快回覆您！');
+          form.reset();
+        });
+
+        console.log('✅ Contact page loaded successfully!');
+      })
+      .catch(error => console.error('Error loading components:', error));
+  </script>
+</body>
+
+</html>

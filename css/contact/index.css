@@ -1,0 +1,246 @@
+/* ========================================
+   Contact Page Styles
+   ======================================== */
+
+.contact-section {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 140px 10px 220px 10px;
+  overflow: hidden;
+}
+
+/* Background */
+.contact__bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -2;
+  transform: scaleX(-1);
+}
+
+.contact__bg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Wrapper */
+.contact__wrapper {
+  display: flex;
+  gap: 60px;
+  max-width: 880px;
+  width: 100%;
+  margin: 0 auto;
+  align-items: flex-start;
+}
+
+/* Left: Info */
+.contact__info {
+  flex: 1;
+  color: #fff;
+  max-width: 480px;
+}
+
+.contact__subtitle {
+  font-size: 36px;
+  font-weight: 700;
+  margin-bottom: 30px;
+}
+
+.contact__desc {
+  margin-bottom: 30px;
+}
+
+.contact__desc p {
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.contact__details p {
+  font-size: 14px;
+  font-weight: 500;
+}
+
+/* Right: Form */
+.contact__form-container {
+  flex: 1;
+  max-width: 480px;
+}
+
+.contact__form-group {
+  display: flex;
+  align-items: center;
+  margin-bottom: 12px;
+  padding: 10px 20px;
+  border-radius: 5px;
+  background-color: rgba(255, 255, 255, 0.3);
+}
+
+.contact__form-group--textarea {
+  flex-direction: column;
+  align-items: flex-start;
+  height: 150px;
+}
+
+.contact__form-group--textarea label {
+  width: 100% !important;
+}
+
+.contact__form-group label {
+  flex-shrink: 0;
+  width: 100px;
+  font-size: 14px;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.contact__form-group input {
+  flex: 1;
+  background-color: transparent;
+  border: none;
+  border: none;
+  color: #fff;
+  font-size: 14px;
+  font-family: inherit;
+  outline: none;
+  transition: border-color 0.3s ease;
+}
+
+.contact__form-group input::placeholder {
+  color: rgba(255, 255, 255, 0.4);
+}
+
+.contact__form-group input:focus {
+  outline: none;
+}
+
+/* Select dropdown - Red style */
+.contact__form-group select {
+  flex: 1;
+  padding: 8px 0;
+  background-color: transparent;
+  border: none;
+  color: #fff;
+  font-size: 14px;
+  font-family: inherit;
+  outline: none;
+  cursor: pointer;
+  appearance: none;
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+  background-repeat: no-repeat;
+  background-position: right 0 center;
+  background-size: 20px;
+  padding-right: 28px;
+}
+
+.contact__form-group select:focus {
+  outline: none;
+}
+
+.contact__form-group select option {
+  background-color: #333;
+  color: #fff;
+}
+
+.contact__form-group textarea {
+  flex: 1;
+  padding: 8px 0;
+  background-color: transparent;
+  border: none;
+  border: none;
+  color: #fff;
+  font-size: 14px;
+  font-family: inherit;
+  outline: none;
+  resize: vertical;
+  min-height: 80px;
+  transition: border-color 0.3s ease;
+}
+
+.contact__form-group textarea::placeholder {
+  color: rgba(255, 255, 255, 0.4);
+}
+
+.contact__form-group textarea:focus {
+  outline: none;
+}
+
+/* Submit Button */
+.contact__form-submit {
+  margin-top: 10px;
+}
+
+.contact__submit-btn {
+  display: block;
+  width: 100%;
+  height: 40px;
+  background-color: var(--secondary-color);
+  color: #fff;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: none;
+  border-radius: 6px;
+}
+
+@media (max-width: 768px) {
+  .contact-section {
+    padding: 80px 20px;
+    min-height: auto;
+  }
+
+  .contact__bg {
+    transform: none;
+  }
+
+  .contact__wrapper {
+    flex-direction: column;
+    gap: 40px;
+  }
+
+  .contact__info {
+    max-width: 100%;
+  }
+
+  .contact__title {
+    font-size: 60px;
+    text-align: start;
+  }
+
+  .contact__subtitle {
+    font-size: 32px;
+    text-align: start;
+    margin-bottom: 20px;
+  }
+
+  .contact__desc {
+    width: 300px;
+    text-align: start;
+    margin-bottom: 20px;
+  }
+
+  .contact__details {
+    text-align: start;
+    display: inline-block;
+  }
+
+  .contact__form-container {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .contact__form-group {
+    gap: 6px;
+  }
+
+  .contact__form-group input,
+  .contact__form-group select,
+  .contact__form-group textarea {
+    width: 100%;
+  }
+}
