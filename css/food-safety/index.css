@@ -49,7 +49,7 @@
   display: flex;
   max-width: 1200px;
   margin: 0 auto;
-  background-color: var(--bg-cream);
+  background-color: #F3ECE2;
   border-radius: 16px;
   overflow: hidden;
 }
@@ -105,8 +105,8 @@
 }
 
 .food-safety__feature-icon {
-  width: 100px;
-  height: 100px;
+  width: 120px;
+  height: 120px;
   border-radius: 50%;
   background-color: #99B863;
   display: flex;
@@ -231,8 +231,8 @@
 }
 
 .food-safety__highlight-image {
-  width: 180px;
-  height: 180px;
+  width: 240px;
+  height: 240px;
   border-radius: 50%;
   overflow: hidden;
   margin: 0 auto 20px;
@@ -272,10 +272,10 @@
     padding: 0;
   }
 
-  /* .food-safety__highlight-image {
-    width: 100px;
-    height: 100px;
-  } */
+  .food-safety__highlight-image {
+    width: 320px;
+    height: 320px;
+  }
 
   .food-safety__highlight-card:not(:last-child)::after {
     top: auto;

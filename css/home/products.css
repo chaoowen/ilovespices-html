@@ -10,7 +10,7 @@
 .single-spice {
   position: relative;
   padding: 80px 0;
-  background: var(--bg-cream);
+  background: #F3ECE2;
   z-index: 10;
 }
 
