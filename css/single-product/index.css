@@ -2,6 +2,10 @@
    Single Product Page Styles
    ======================================== */
 
+.single-product-page {
+  position: relative;
+}
+
 .single-product-page .page-title {
   padding-top: 0;
 }
@@ -426,7 +430,7 @@
    單方香辛料 Section (single-spice 無 tabs 版本)
    ======================================== */
 .single-spice {
-  background-color: #fff;
+  background-color: transparent;
 }
 
 .single-spice::before {
@@ -438,7 +442,6 @@
   width: 100%;
   max-width: 1280px;
   height: 1px;
-  background-color: #ccc;
 }
 
 .single-spice--no-tabs .single-spice__tabs,

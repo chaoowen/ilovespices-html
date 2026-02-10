@@ -83,6 +83,16 @@ button:focus-visible {
   background-color: var(--secondary-color);
 }
 
+/* Page Background Image */
+.page-bg {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  pointer-events: none;
+  z-index: -1;
+}
+
 .btn {
   display: block;
   width: 200px;

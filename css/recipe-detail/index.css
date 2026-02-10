@@ -2,6 +2,10 @@
    Recipe Detail Page Styles
    ======================================== */
 
+.recipe-detail-page {
+  position: relative;
+}
+
 .recipe-detail-page .page-title {
   padding-top: 0;
 }
@@ -406,7 +410,7 @@
    桌機版才顯示，手機版隱藏
    ======================================== */
 .recipe-detail-page .recipes {
-  background-color: #fff;
+  background-color: transparent;
 }
 
 .recipe-detail-page .recipes__carousel {
