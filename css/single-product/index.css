@@ -308,8 +308,16 @@
 
   .product-detail__specs {
     grid-template-columns: 1fr;
-    gap: 12px;
+    gap: 0;
     margin-bottom: 24px;
+  }
+
+  .product-detail__spec:nth-child(-n+2) {
+    border-top: none;
+  }
+
+  .product-detail__spec:first-child {
+    border-top: 1px dashed #ccc;
   }
 
   .product-detail__channel {
@@ -436,4 +444,41 @@
 .single-spice--no-tabs .single-spice__tabs,
 .single-spice--no-tabs .single-spice__hero {
   display: none;
+}
+
+/* ========================================
+   Single Product Header
+   ======================================== */
+.single-product__header {
+  text-align: center;
+  margin-bottom: 40px;
+  position: relative;
+  z-index: 5;
+}
+
+.single-product__title {
+  font-size: 60px;
+  font-weight: 700;
+  color: var(--secondary-color);
+  margin-bottom: 10px;
+}
+
+.single-product__subtitle {
+  font-size: 36px;
+  font-weight: 500;
+  color: var(--text-dark);
+}
+
+@media (max-width: 768px) {
+  .single-product__header {
+    margin-bottom: 24px;
+  }
+
+  .single-product__title {
+    font-size: 36px;
+  }
+
+  .single-product__subtitle {
+    font-size: 20px;
+  }
 }

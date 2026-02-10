@@ -23,7 +23,7 @@
       image: '../../images/home/product-2.png',
       subtitle: '具有濃郁洋蔥風味及辛辣味',
       content: '以乾燥洋蔥磨碎呈粉狀，洋蔥粉可代替1/2杯切碎的新鮮洋蔥，若以與新鮮洋蔥搭配使用更具有風味。',
-      recipe: '月桂葉馬鈴薯泥'
+      recipe: '脆烤沙拉三明治佐 TZATZIKI 希臘醬汁'
     },
     {
       id: 3,

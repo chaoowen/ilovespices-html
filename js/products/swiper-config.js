@@ -11,10 +11,10 @@
    * 響應式：1200px 以下才啟用
    */
   SwiperInit.createResponsive('productsRow', '.products-row-swiper', {
-    slidesPerView: 2.6,
-    spaceBetween: 16,
-    centeredSlides: true,
+    slidesPerView: 'auto',
+    spaceBetween: 10,
     centeredSlidesBounds: true,
+    slidesOffsetBefore: 40,
 
     // 觀察容器變化，自動更新
     observer: true,
@@ -26,16 +26,12 @@
     },
 
     breakpoints: {
-      480: {
-        slidesPerView: 3,
+      768: {
+        slidesPerView: 'auto',
         spaceBetween: 16,
       },
-      768: {
-        slidesPerView: 4,
-        spaceBetween: 20,
-      },
       1024: {
-        slidesPerView: 5,
+        slidesPerView: 'auto',
         spaceBetween: 24,
       },
     },

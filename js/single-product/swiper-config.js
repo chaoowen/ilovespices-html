@@ -40,7 +40,7 @@ SwiperInit.create('recipes', '.recipes-swiper', {
 
 // 單方香辛料 Swiper (使用首頁 single-spice 樣式)
 SwiperInit.create('singleSpice', '.single-spice-swiper', {
-  slidesPerView: 1.2,
+  slidesPerView: 1.8,
   spaceBetween: 12,
   centeredSlides: true,
   loop: true,
@@ -76,7 +76,7 @@ SwiperInit.create('singleSpice', '.single-spice-swiper', {
   // 響應式斷點設定
   breakpoints: {
     768: {
-      slidesPerView: 3,
+      slidesPerView: 4,
       spaceBetween: 16,
       centeredSlides: false,
     },
