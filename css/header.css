@@ -141,39 +141,8 @@
     display: block;
   }
 
-  /* 導航選單摺疊效果 */
+  /* 隱藏桌機版導航，改用滿版 mobile-menu */
   .header__nav {
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.3s ease;
-    border-top: none;
-  }
-
-  .header__nav.active {
-    max-height: 500px;
-    border-top: 1px solid var(--border-color);
-  }
-
-  /* 垂直排列導航項目 */
-  .header__nav-list {
-    flex-direction: column;
-    gap: 0;
-    padding: 0;
-  }
-
-  .header__nav-item {
-    width: 100%;
-    border-bottom: 1px solid var(--border-color);
-  }
-
-  .header__nav-link {
-    padding: 15px 20px;
-    width: 100%;
-    text-align: center;
-  }
-
-  /* 隱藏分隔符號 */
-  .header__nav-separator {
     display: none;
   }
 }
@@ -193,5 +162,179 @@
 @media (max-width: 480px) {
   .header__container {
     padding: 0 20px;
+  }
+}
+
+/* ========================================
+   Mobile Full-Screen Menu
+   ======================================== */
+.mobile-menu {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  z-index: 9999;
+  flex-direction: column;
+  background-color: #f8f8f8;
+}
+
+.mobile-menu.active {
+  display: flex;
+}
+
+.menu-header {
+  background-color: #c20000;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 0 40px;
+  cursor: pointer;
+}
+
+.back-arrow {
+  width: 10px;
+  height: 20px;
+  flex-shrink: 0;
+}
+
+.back-text {
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: normal;
+  line-height: 1.5;
+}
+
+.menu-content {
+  background-color: #fefefe;
+  flex: 1;
+  padding: 50px 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  overflow-y: auto;
+}
+
+.menu-links {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  padding-bottom: 20px;
+}
+
+.menu-item {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 100%;
+}
+
+.menu-link {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.menu-toggle-icon {
+  width: 24px;
+  height: 24px;
+  transition: transform 0.3s ease;
+}
+
+.menu-item.expanded .menu-toggle-icon {
+  transform: rotate(180deg);
+}
+
+.menu-title {
+  color: #333333;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.5;
+}
+
+.menu-divider {
+  width: 100%;
+  height: 1px;
+  background-color: #cccccc;
+}
+
+.submenu {
+  display: none;
+  flex-direction: column;
+  gap: 20px;
+  padding-left: 0;
+  padding-top: 10px;
+  animation: slideDown 0.3s ease-out;
+}
+
+.menu-item.expanded .submenu {
+  display: flex;
+}
+
+.submenu-link {
+  color: #333333;
+  font-size: 14px;
+  font-weight: normal;
+  line-height: 1.5;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.submenu-link:hover {
+  color: #c20000;
+}
+
+.social-media {
+  display: flex;
+  gap: 12px;
+  padding-top: 20px;
+  margin-top: auto;
+}
+
+.social-icon {
+  display: inline-flex;
+  width: 30px;
+  height: 30px;
+  text-decoration: none;
+  transition: transform 0.2s ease;
+}
+
+.social-icon:hover {
+  transform: scale(1.1);
+}
+
+.social-icon svg {
+  width: 100%;
+  height: 100%;
+}
+
+.menu-link:active .menu-title {
+  color: #c20000;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 480px) {
+  .menu-header {
+    padding: 0 20px;
+  }
+
+  .menu-content {
+    padding: 30px 20px;
   }
 }

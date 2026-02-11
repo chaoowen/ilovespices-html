@@ -1,15 +1,43 @@
 const mobileToggle = document.getElementById('mobileMenuToggle');
-const mainNav = document.getElementById('mainNav');
+const mobileMenu = document.getElementById('mobileMenu');
+const mobileMenuClose = document.getElementById('mobileMenuClose');
 
+// Toggle mobile menu
 mobileToggle.addEventListener('click', function () {
   const isExpanded = this.getAttribute('aria-expanded') === 'true';
 
-  // Toggle menu
-  mainNav.classList.toggle('active');
+  mobileMenu.classList.toggle('active');
   this.classList.toggle('active');
-
-  // Update ARIA attributes
   this.setAttribute('aria-expanded', !isExpanded);
+
+  // Toggle body scroll
+  document.body.style.overflow = mobileMenu.classList.contains('active') ? 'hidden' : '';
+});
+
+// Close menu via back arrow / menu-header
+document.querySelector('.menu-header').addEventListener('click', function () {
+  mobileMenu.classList.remove('active');
+  mobileToggle.classList.remove('active');
+  mobileToggle.setAttribute('aria-expanded', 'false');
+  document.body.style.overflow = '';
+});
+
+// Submenu toggle for items with .has-submenu
+document.querySelectorAll('.menu-item.has-submenu > .menu-link').forEach(link => {
+  link.addEventListener('click', function () {
+    const menuItem = this.parentElement;
+    const icon = this.querySelector('.menu-toggle-icon');
+    const isExpanded = menuItem.classList.contains('expanded');
+
+    menuItem.classList.toggle('expanded');
+
+    // Switch icon
+    if (icon) {
+      icon.src = isExpanded
+        ? '../images/icons/chevron-down.svg'
+        : '../images/icons/minus.svg';
+    }
+  });
 });
 
 // Active Navigation Link
@@ -36,7 +64,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   });
 });
 
-// Header scroll effect (optional)
+// Header scroll effect
 let lastScroll = 0;
 const header = document.querySelector('.header');
 
@@ -51,29 +79,3 @@ window.addEventListener('scroll', () => {
 
   lastScroll = currentScroll;
 });
-
-// Close mobile menu when clicking outside
-document.addEventListener('click', function (event) {
-  const isClickInsideNav = mainNav.contains(event.target);
-  const isClickOnToggle = mobileToggle.contains(event.target);
-
-  if (!isClickInsideNav && !isClickOnToggle && mainNav.classList.contains('active')) {
-    mainNav.classList.remove('active');
-    mobileToggle.classList.remove('active');
-    mobileToggle.setAttribute('aria-expanded', 'false');
-  }
-});
-
-// Prevent body scroll when mobile menu is open (optional)
-const observer = new MutationObserver(function (mutations) {
-  mutations.forEach(function (mutation) {
-    if (mutation.attributeName === 'class') {
-      if (mainNav.classList.contains('active')) {
-        document.body.style.overflow = 'hidden';
-      } else {
-        document.body.style.overflow = '';
-      }
-    }
-  });
-});
-observer.observe(mainNav, { attributes: true });
