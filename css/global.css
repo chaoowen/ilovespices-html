@@ -6,9 +6,7 @@
   --secondary-color: #C20000;
   --text-dark: #333333;
   --text-light: #666666;
-  --border-color: #e0e0e0;
   --footer-bg: #232222;
-  --hover-color: #003d7a;
   --transition: all 0.3s ease;
 }
 
@@ -143,7 +141,8 @@ button:focus-visible {
 }
 
 .common-pagination .swiper-pagination-bullet-active {
-  background: #333;
+  background: var(--text-dark);
+  ;
   width: 10px;
 }
 
