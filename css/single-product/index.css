@@ -163,10 +163,10 @@
 }
 
 .product-detail__channel-label {
+  flex-shrink: 0;
   font-size: 18px;
   font-weight: 500;
   color: var(--secondary-color);
-  min-width: 70px;
 }
 
 .product-detail__channel-select {
@@ -178,6 +178,7 @@
 
 .product-detail__channel-select .select-wrapper {
   flex: 1;
+  min-width: 0;
   max-width: 400px;
 }
 
@@ -187,7 +188,7 @@
 }
 
 .product-detail__channel-btn {
-  width: 100px;
+  flex-shrink: 0;
   height: 52px;
   padding: 10px 24px;
   background-color: #fff;
@@ -207,7 +208,7 @@
 /* CTA Buttons */
 .product-detail__cta {
   display: flex;
-  gap: 16px;
+  gap: 12px;
 }
 
 .product-detail__cta-btn {
@@ -217,9 +218,9 @@
   align-items: center;
   justify-content: center;
   gap: 8px;
-  padding: 14px 24px;
+  padding: 14px 20px;
   border-radius: 4px;
-  font-size: 16px;
+  font-size: 14px;
   font-weight: 500;
   text-decoration: none;
   transition: var(--transition);
@@ -244,6 +245,7 @@
 @media (max-width: 1024px) {
   .product-detail__container {
     gap: 40px;
+    padding: 0 40px;
   }
 
   .product-detail__image {
@@ -270,11 +272,11 @@
    ======================================== */
 @media (max-width: 768px) {
   .breadcrumb__container {
-    padding: 40px 20px 0 20px;
+    padding: 40px 40px 0 40px;
   }
 
   .product-detail {
-    padding: 24px 0 60px;
+    padding: 24px 0 40px;
   }
 
   .product-detail__container {
@@ -325,26 +327,30 @@
   }
 
   .product-detail__channel {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 8px;
+    gap: 12px;
   }
 
   .product-detail__channel-select {
-    width: 100%;
+    flex: 1;
+    min-width: 0;
   }
 
   .product-detail__channel-select .select-wrapper {
     max-width: none;
   }
+}
 
-  .product-detail__cta {
-    flex-direction: column;
-  }
+/* Section Divider */
+.section-divider {
+  max-width: 1280px;
+  margin: 0 auto;
+  border: none;
+  border-top: 1px solid #ccc;
+}
 
-  .product-detail__cta-btn {
-    padding: 12px 20px;
-    font-size: 15px;
+@media (max-width: 768px) {
+  .section-divider {
+    max-width: calc(100% - 80px);
   }
 }
 
