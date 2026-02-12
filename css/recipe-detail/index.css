@@ -22,7 +22,7 @@
 .recipe-hero__header {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0 20px;
+  padding: 0 40px;
 }
 
 /* Breadcrumb */
@@ -121,7 +121,7 @@
 .recipe-content__container {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0 20px;
+  padding: 0 40px;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   gap: 30px;
@@ -349,13 +349,13 @@
    ======================================== */
 .recipe-search {
   background-color: var(--secondary-color);
-  padding: 24px 0;
+  padding: 12px 0;
 }
 
 .recipe-search__container {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0 20px;
+  padding: 0 40px;
   display: flex;
   align-items: center;
   gap: 16px;

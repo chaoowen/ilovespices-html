@@ -41,7 +41,7 @@
 
 /* Content Section */
 .food-safety__content {
-  padding: 0 20px;
+  padding: 0 40px;
 
 }
 
@@ -292,7 +292,7 @@
    Testing Reports Section
    ======================================== */
 .food-safety__reports {
-  padding: 80px 20px 100px;
+  padding: 80px 40px 100px;
   background-color: #fff;
 }
 
@@ -390,7 +390,7 @@
 
 @media (max-width: 768px) {
   .food-safety__reports {
-    padding: 60px 20px 80px;
+    padding: 60px 40px 80px;
   }
 
   .food-safety__reports-wrapper {

@@ -227,7 +227,7 @@
   }
 
   .products__options {
-    padding: 40px 24px;
+    padding: 40px;
   }
 
   .products-row-swiper {
@@ -296,7 +296,7 @@
   .products__list {
     grid-template-columns: repeat(3, 1fr);
     gap: 20px;
-    padding: 24px;
+    padding: 40px;
   }
 }
 
@@ -332,6 +332,7 @@
 
   .products__list-item__image {
     height: 240px;
+    padding: 20px 20px 30px 20px;
   }
 
   .products__list-item__title-zh,

@@ -147,8 +147,8 @@
   content: '';
   position: absolute;
   bottom: 0;
-  left: 20px;
-  width: calc(100% - 40px);
+  left: 40px;
+  width: calc(100% - 80px);
   height: 1px;
   background-color: #ccc;
 }
@@ -269,7 +269,7 @@
   }
 
   .products__options {
-    padding: 40px 24px;
+    padding: 40px;
   }
 
   .products-row-swiper {
@@ -340,7 +340,7 @@
   }
 
   .products__list-item {
-    padding: 40px 24px;
+    padding: 40px;
   }
 }
 

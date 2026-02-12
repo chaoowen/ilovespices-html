@@ -121,7 +121,7 @@ button:focus-visible {
 
 @media screen and (max-width: 768px) {
   .more_btn {
-    width: calc(100% - 40px);
+    width: calc(100% - 80px);
     max-width: 400px;
   }
 }

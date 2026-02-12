@@ -6,7 +6,7 @@
    Section 2: 品牌簡介
    ======================================== */
 .brand-intro {
-  padding: 0 20px 80px 20px;
+  padding: 0 40px 80px;
   background-color: #fff;
   text-align: center;
 }
@@ -278,7 +278,7 @@
   }
 
   .mccormick-intro__content {
-    padding: 40px 20px;
+    padding: 40px;
     order: 2;
   }
 
@@ -292,6 +292,9 @@
 }
 
 @media (max-width: 768px) {
+  .about__title {
+    padding-top: 40px;
+  }
 
   /* 品牌簡介 */
   .brand-intro__grid {
@@ -354,7 +357,7 @@
 
   /* 交錯圖文區塊 */
   .brand-stories {
-    padding: 40px 20px 80px 20px;
+    padding: 40px 40px 80px;
   }
 
   .brand-story {

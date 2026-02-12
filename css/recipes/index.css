@@ -91,7 +91,7 @@
 
 .recipes-list__container {
   max-width: 1200px;
-  margin: 0 auto 60px;
+  margin: 0 auto 40px;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 30px;
@@ -236,11 +236,10 @@
 @media (max-width: 768px) {
   .recipes__title {
     padding-top: 40px;
-    font-size: 28px;
   }
 
   .recipes__filter {
-    padding: 24px;
+    padding: 40px;
     padding-bottom: 0 !important;
   }
 
@@ -271,7 +270,7 @@
   }
 
   .recipes-list {
-    padding: 40px 20px 80px;
+    padding: 40px;
   }
 
   .recipes-list__container {
