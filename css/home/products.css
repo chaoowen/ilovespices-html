@@ -295,15 +295,24 @@
 
   .single-spice__tabs {
     width: 100%;
+    left: 0;
+    transform: translate(0, -100%);
     gap: 6px;
-    flex-wrap: wrap;
+    padding: 0 4px;
+    flex-wrap: nowrap;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    justify-content: flex-start;
   }
 
   .single-spice__tab {
-    width: 84px;
+    min-width: 84px;
+    width: max-content;
+    flex-shrink: 0;
     padding: 8px 0;
     font-size: 14px;
     border-radius: 12px 12px 0 0;
+    white-space: nowrap;
   }
 
   .single-spice__header {
