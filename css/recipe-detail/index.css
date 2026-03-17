@@ -231,23 +231,26 @@
   padding: 16px 0;
 }
 
-/* 連接線：從數字圓圈往下延伸到下一個數字 */
-.recipe-steps__item::before {
+/* 連接線上半段：item 頂部 → 圓圈頂部（第一個 item 除外） */
+.recipe-steps__item:not(:first-child)::before {
   content: '';
   position: absolute;
-  left: 9px;
-  /* 數字圓圈中心 (20px / 2 - 1px) */
-  top: calc(50% + 10px);
-  /* 從數字底部開始 */
-  bottom: calc(-50% - 10px);
-  /* 延伸到下一個數字頂部 */
+  left: 9px; /* 圓圈中心 (20px / 2 - 1px) */
+  top: 0;
+  bottom: calc(50% + 10px); /* 至圓圈頂部 */
   width: 2px;
   background-color: var(--secondary-color);
 }
 
-/* 最後一個 item 不需要線條 */
-.recipe-steps__item:last-child::before {
-  display: none;
+/* 連接線下半段：圓圈底部 → item 底部（最後一個 item 除外） */
+.recipe-steps__item:not(:last-child)::after {
+  content: '';
+  position: absolute;
+  left: 9px; /* 圓圈中心 (20px / 2 - 1px) */
+  top: calc(50% + 10px); /* 從圓圈底部開始 */
+  bottom: 0;
+  width: 2px;
+  background-color: var(--secondary-color);
 }
 
 .recipe-steps__number {
@@ -590,18 +593,20 @@
     padding: 14px 0;
   }
 
-  .recipe-steps__item::before {
-    left: 12px;
+  .recipe-steps__item:not(:first-child)::before {
+    left: 13px; /* 圓圈中心 (28px / 2 - 1px) */
+    bottom: calc(50% + 14px); /* 28px 圓圈 */
+  }
+
+  .recipe-steps__item:not(:last-child)::after {
+    left: 13px;
+    top: calc(50% + 14px);
   }
 
   .recipe-steps__number {
     width: 28px;
     height: 28px;
     font-size: 12px;
-  }
-
-  .recipe-steps__list::before {
-    left: 13px;
   }
 
   .recipe-steps__text {
