@@ -41,20 +41,56 @@
           <input type="text" placeholder="輸入食譜關鍵字">
         </div>
         <div class="recipes__filter-select">
-          <select>
-            <option value="">產品系列</option>
-            <option value="single">單方香辛料</option>
-            <option value="compound">複方香辛料</option>
-            <option value="grinder">自磨香辛料</option>
-          </select>
+          <div class="multiselect" data-placeholder="產品系列">
+            <div class="multiselect__trigger">
+              <span class="multiselect__label">產品系列</span>
+              <div class="multiselect__arrow"></div>
+            </div>
+            <div class="multiselect__dropdown">
+              <label class="multiselect__option">
+                <input type="checkbox" value="single">
+                <span>單方香辛料</span>
+              </label>
+              <label class="multiselect__option">
+                <input type="checkbox" value="compound">
+                <span>複方香辛料</span>
+              </label>
+              <label class="multiselect__option">
+                <input type="checkbox" value="grinder">
+                <span>自磨香辛料</span>
+              </label>
+            </div>
+          </div>
         </div>
         <div class="recipes__filter-select">
-          <select>
-            <option value="">單方香辛料</option>
-            <option value="pepper">胡椒</option>
-            <option value="basil">羅勒</option>
-            <option value="oregano">奧勒岡</option>
-          </select>
+          <div class="multiselect" data-placeholder="單方香辛料">
+            <div class="multiselect__trigger">
+              <span class="multiselect__label">單方香辛料</span>
+              <div class="multiselect__arrow"></div>
+            </div>
+            <div class="multiselect__dropdown">
+              <label class="multiselect__option">
+                <input type="checkbox" value="pepper">
+                <span>胡椒</span>
+              </label>
+              <label class="multiselect__option">
+                <input type="checkbox" value="pepper">
+                <span>很多東西啦啦啦了</span>
+              </label>
+              <label class="multiselect__option">
+                <input type="checkbox" value="basil">
+                <span>羅勒</span>
+              </label>
+              <label class="multiselect__option">
+                <input type="checkbox" value="oregano">
+                <span>奧勒岡</span>
+              </label>
+              <label class="multiselect__option">
+                <input type="checkbox" value="pepper">
+                <span>生年肉麵麵米長</span>
+              </label>
+            </div>
+          </div>
         </div>
         <button type="button" class="recipes__filter-btn">搜尋</button>
       </div>
@@ -75,6 +111,41 @@
 
   <!-- footer -->
   <div id="footer"></div>
+
+  <script>
+    function initMultiselects() {
+      const multiselects = document.querySelectorAll('.multiselect')
+
+      multiselects.forEach(ms => {
+        const trigger = ms.querySelector('.multiselect__trigger')
+        const label = ms.querySelector('.multiselect__label')
+        const checkboxes = ms.querySelectorAll('input[type="checkbox"]')
+        const placeholder = ms.dataset.placeholder
+
+        trigger.addEventListener('click', () => {
+          const isOpen = ms.classList.contains('is-open')
+          document.querySelectorAll('.multiselect.is-open').forEach(other => other.classList.remove('is-open'))
+          if (!isOpen) ms.classList.add('is-open')
+        })
+
+        checkboxes.forEach(cb => {
+          cb.addEventListener('change', () => {
+            const selected = [...checkboxes].filter(c => c.checked).map(c => c.nextElementSibling.textContent)
+            label.textContent = selected.length ? selected.join('、') : placeholder
+            label.classList.toggle('has-selection', selected.length > 0)
+          })
+        })
+      })
+
+      document.addEventListener('click', e => {
+        if (!e.target.closest('.multiselect')) {
+          document.querySelectorAll('.multiselect.is-open').forEach(ms => ms.classList.remove('is-open'))
+        }
+      })
+    }
+
+    initMultiselects()
+  </script>
 
   <script>
     Promise.all([
