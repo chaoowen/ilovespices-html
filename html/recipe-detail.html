@@ -34,23 +34,49 @@
     <section class="recipe-search">
       <div class="recipe-search__container">
         <input type="text" class="recipe-search__input" placeholder="輸入食譜關鍵字">
-        <div class="select-wrapper recipe-search__select">
-          <select class="form-select">
-            <option value="">產品系列</option>
-            <option value="seasoning">調味粉系列</option>
-            <option value="sauce">醬料系列</option>
-            <option value="spice">香辛料系列</option>
-          </select>
-          <span class="select-arrow"></span>
+        <div class="recipe-search__select">
+          <div class="multiselect" data-placeholder="產品系列">
+            <div class="multiselect__trigger">
+              <span class="multiselect__label">產品系列</span>
+              <div class="multiselect__arrow"></div>
+            </div>
+            <div class="multiselect__dropdown">
+              <label class="multiselect__option">
+                <input type="checkbox" value="seasoning">
+                <span>調味粉系列</span>
+              </label>
+              <label class="multiselect__option">
+                <input type="checkbox" value="sauce">
+                <span>醬料系列</span>
+              </label>
+              <label class="multiselect__option">
+                <input type="checkbox" value="spice">
+                <span>香辛料系列</span>
+              </label>
+            </div>
+          </div>
         </div>
-        <div class="select-wrapper recipe-search__select">
-          <select class="form-select">
-            <option value="">全部系列</option>
-            <option value="western">西式料理</option>
-            <option value="asian">亞洲料理</option>
-            <option value="mexican">墨西哥料理</option>
-          </select>
-          <span class="select-arrow"></span>
+        <div class="recipe-search__select">
+          <div class="multiselect" data-placeholder="全部系列">
+            <div class="multiselect__trigger">
+              <span class="multiselect__label">全部系列</span>
+              <div class="multiselect__arrow"></div>
+            </div>
+            <div class="multiselect__dropdown">
+              <label class="multiselect__option">
+                <input type="checkbox" value="western">
+                <span>西式料理</span>
+              </label>
+              <label class="multiselect__option">
+                <input type="checkbox" value="asian">
+                <span>亞洲料理</span>
+              </label>
+              <label class="multiselect__option">
+                <input type="checkbox" value="mexican">
+                <span>墨西哥料理</span>
+              </label>
+            </div>
+          </div>
         </div>
         <button type="button" class="recipe-search__btn">搜尋</button>
       </div>
@@ -266,6 +292,42 @@
 
 <!-- Swiper JS -->
 <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+<script>
+  function initMultiselects() {
+    const multiselects = document.querySelectorAll('.multiselect')
+
+    multiselects.forEach(ms => {
+      const trigger = ms.querySelector('.multiselect__trigger')
+      const label = ms.querySelector('.multiselect__label')
+      const checkboxes = ms.querySelectorAll('input[type="checkbox"]')
+      const placeholder = ms.dataset.placeholder
+
+      trigger.addEventListener('click', () => {
+        const isOpen = ms.classList.contains('is-open')
+        document.querySelectorAll('.multiselect.is-open').forEach(other => other.classList.remove('is-open'))
+        if (!isOpen) ms.classList.add('is-open')
+      })
+
+      checkboxes.forEach(cb => {
+        cb.addEventListener('change', () => {
+          const selected = [...checkboxes].filter(c => c.checked).map(c => c.nextElementSibling.textContent)
+          label.textContent = selected.length ? selected.join('、') : placeholder
+          label.classList.toggle('has-selection', selected.length > 0)
+        })
+      })
+    })
+
+    document.addEventListener('click', e => {
+      if (!e.target.closest('.multiselect')) {
+        document.querySelectorAll('.multiselect.is-open').forEach(ms => ms.classList.remove('is-open'))
+      }
+    })
+  }
+
+  initMultiselects()
+</script>
+
 <script>
   Promise.all([
     // HTML 模板
