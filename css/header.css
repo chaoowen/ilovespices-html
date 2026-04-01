@@ -30,6 +30,7 @@
 .header__logo img {
   width: 100px;
   height: auto;
+  transition: height 0.3s ease, width 0.3s ease;
 }
 
 /* ========================================
@@ -120,6 +121,36 @@
 
 .header__mobile-toggle.active .header__toggle-close {
   display: block;
+}
+
+/* ========================================
+   Scrolled State - Desktop Only
+   ======================================== */
+@media (min-width: 1025px) {
+  .header--scrolled .header__container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 0;
+    padding-bottom: 0;
+    gap: 20px;
+  }
+
+  .header--scrolled .header__logo-section {
+    padding-top: 0;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+  }
+
+  .header--scrolled .header__logo img {
+    height: 54px;
+    width: auto;
+  }
+
+  .header--scrolled .header__nav {
+    flex: none;
+  }
 }
 
 /* ========================================

@@ -65,17 +65,16 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 });
 
 // Header scroll effect
-let lastScroll = 0;
 const header = document.querySelector('.header');
 
 window.addEventListener('scroll', () => {
   const currentScroll = window.pageYOffset;
 
-  if (currentScroll > 100) {
+  if (currentScroll > 80) {
     header.style.boxShadow = '0 4px 12px rgba(0, 0, 0, 0.15)';
+    header.classList.add('header--scrolled');
   } else {
     header.style.boxShadow = '0 2px 8px rgba(0, 0, 0, 0.08)';
+    header.classList.remove('header--scrolled');
   }
-
-  lastScroll = currentScroll;
-});
+}, { passive: true });
